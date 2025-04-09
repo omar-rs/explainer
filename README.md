@@ -1,6 +1,6 @@
 # explainer
 * Explain errors in failed content publishing to PCC
-* Inspired by the GH Actions ["Explain error" feature](https://github.com/posit-hosted/vivid-api/actions/runs/14268653451/job/39996910370)
+* Inspired by the GH Actions <a href="https://github.com/posit-hosted/vivid-api/actions/runs/14268653451/job/39996910370" target="_blank">"Explain error" feature</a> 
 
 
 ### how to ingest repos
@@ -15,6 +15,10 @@
 
 ### questions
 * what type of errors is this best for?
+  * syntax errors
+  * logical errors
+  * dependencies
+* how does an error explainer fit in the workflow of a typical user?
 * what is the minimum info you need to pass to the llm to explain the errors?
   * only logs
   * logs and source code
