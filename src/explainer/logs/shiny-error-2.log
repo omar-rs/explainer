@@ -1,0 +1,49 @@
+2025-04-08T12:50:06-04:00 Your publish request with ID cd993aa4-7bad-4c56-b087-903e4e8ff072 is now being processed.
+2025-04-08T12:50:06-04:00 Quarto version was not provided. Using 1.6.42
+2025-04-08T12:50:06-04:00 Loading your source code...
+2025-04-08T12:50:06-04:00 Initialized empty Git repository in /cloud/project/.git/
+2025-04-08T12:50:06-04:00 From https://github.com/bruno-curta/fintrack
+2025-04-08T12:50:06-04:00  * branch            7876f7530f21ed1dce48262bc7401089251f4deb -> FETCH_HEAD
+2025-04-08T12:50:06-04:00 HEAD is now at 7876f75 Merge pull request #35 from bruno-curta/dev
+2025-04-08T12:50:07-04:00 Connect Cloud is providing the following 49 Python packages:
+2025-04-08T12:50:07-04:00 annotated-types==0.7.0, anyio==4.9.0, appdirs==1.4.4, asgiref==3.8.1, certifi==2025.1.31
+2025-04-08T12:50:07-04:00 click==8.1.8, contourpy==1.3.1, cycler==0.12.1, fonttools==4.56.0, h11==0.14.0
+2025-04-08T12:50:07-04:00 htmltools==0.6.0, httpcore==1.0.7, httpx==0.28.1, idna==3.10, jinja2==3.1.6
+2025-04-08T12:50:07-04:00 kiwisolver==1.4.8, linkify-it-py==2.0.3, markdown-it-py==3.0.0, markupsafe==3.0.2, matplotlib==3.10.1
+2025-04-08T12:50:07-04:00 mdit-py-plugins==0.4.2, mdurl==0.1.2, narwhals==1.31.0, numpy==2.2.4, orjson==3.10.15
+2025-04-08T12:50:07-04:00 packaging==24.2, pandas==2.2.3, pillow==11.1.0, prompt-toolkit==3.0.50, pydantic-core==2.27.2
+2025-04-08T12:50:07-04:00 pyparsing==3.2.1, python-dateutil==2.9.0.post0, python-multipart==0.0.20, pytz==2025.1, questionary==2.1.0
+2025-04-08T12:50:07-04:00 setuptools==77.0.3, shiny==1.3.0, six==1.17.0, sniffio==1.3.1, starlette==0.46.1
+2025-04-08T12:50:07-04:00 tqdm==4.67.1, typing-extensions==4.12.2, tzdata==2025.1, uc-micro-py==1.0.3, uvicorn==0.34.0
+2025-04-08T12:50:07-04:00 watchfiles==1.0.4, wcwidth==0.2.13, websockets==15.0.1, wsproto==1.2.0
+2025-04-08T12:50:07-04:00 11 additional packages will be installed from the Internet.
+2025-04-08T12:50:08-04:00 Resolved 60 packages in 482ms
+2025-04-08T12:50:08-04:00 Prepared 11 packages in 139ms
+2025-04-08T12:50:08-04:00 Installed 11 packages in 19ms
+2025-04-08T12:50:08-04:00  + distro==1.9.0
+2025-04-08T12:50:08-04:00  + dnspython==2.7.0
+2025-04-08T12:50:08-04:00  + jiter==0.9.0
+2025-04-08T12:50:08-04:00  + openai==1.68.2
+2025-04-08T12:50:08-04:00  + pip==25.0.1
+2025-04-08T12:50:08-04:00  + pydantic==2.10.6
+2025-04-08T12:50:08-04:00  + pyjwt==2.10.1
+2025-04-08T12:50:08-04:00  + pymongo==4.11.3
+2025-04-08T12:50:08-04:00  + rsconnect-python==1.25.2
+2025-04-08T12:50:08-04:00  + semver==3.0.4
+2025-04-08T12:50:08-04:00  + tabulate==0.9.0
+2025-04-08T12:50:08-04:00 Quarto version was not provided. Using 1.6.42
+2025-04-08T12:50:08-04:00 Using Quarto version: 1.6.42
+2025-04-08T12:50:08-04:00 Running on host: deployment-0196164f-90ae62ae5ebf50f4c40ff4c5e5c41573-deplotmmpw
+2025-04-08T12:50:08-04:00 Process ID: 245
+2025-04-08T12:50:08-04:00 Running as user: uid=10002(connect) gid=10002(connect) groups=10002(connect)
+2025-04-08T12:50:08-04:00 Connect version: 2025.03.0
+2025-04-08T12:50:08-04:00 LANG: C.UTF-8
+2025-04-08T12:50:08-04:00 Working directory: /cloud/project
+2025-04-08T12:50:08-04:00 Bootstrapping environment using Python 3.12.7 (main, Feb 25 2025, 22:33:41) [GCC 11.4.0] at /cloud/lib/venv/bin/python3
+2025-04-08T12:50:08-04:00 Running content using the current Python environment
+2025-04-08T12:50:08-04:00   from pkg_resources import parse_version
+2025-04-08T12:50:09-04:00 Running content using Python "3.12.7 (main, Feb 25 2025, 22:33:41) [GCC 11.4.0]" at "/cloud/lib/venv/bin/python3"
+2025-04-08T12:50:09-04:00 Loading code from "app"
+2025-04-08T12:50:42-04:00 SSL handshake failed: fintrack-shard-00-00.exdwy.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: fintrack-shard-00-02.exdwy.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: fintrack-shard-00-01.exdwy.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67f553c43ea872a7af45beba, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('fintrack-shard-00-00.exdwy.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: fintrack-shard-00-00.exdwy.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR]
+2025-04-08T12:50:42-04:00  tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('fintrack-shard-00-01.exdwy.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: fintrack-shard-00-01.exdwy.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('fintrack-shard-00-02.exdwy.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: fintrack-shard-00-02.exdwy.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-04-08T12:51:08-04:00 Failed to publish content: Your application failed to start. error_id=88a2949f-95e3-419d-b6bf-64f64090e8fb

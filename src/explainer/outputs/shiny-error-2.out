@@ -1,0 +1,49 @@
+The error log indicates an `SSL handshake failed` error while trying to connect to the MongoDB server at `fintrack-shard-00-00.exdwy.mongodb.net:27017`. This is typically due to SSL/TLS misconfigurations. Here's how you can address the problem:
+
+### Possible Causes and Solutions:
+
+1. **SSL/TLS Version Mismatch**:
+   - Make sure that the MongoDB Atlas configuration supports the TLS protocol version that your MongoDB client is using. As of current practices, ensure using TLS 1.2 or higher. Check your MongoDB Atlas configuration to confirm it's using a supported version.
+
+2. **Outdated or Misconfigured Libraries**:
+   - Ensure that the `pymongo` library is up to date. From the logs, you're using `pymongo==4.11.3`, which is fairly recent. However, double-check if there're any specific issues with that version related to TLS/SSL.
+   - Double-check that your OpenSSL library is up to date, as an outdated OpenSSL could lead to unsupported cipher suites or TLS versions.
+
+3. **Certificate Validation**:
+   - If manually providing certificates or using a custom CA, ensure they are correctly configured and valid.
+   - You might disable certificate verification as a quick test (not recommended for production). Example snippet:
+     ```python
+     from pymongo import MongoClient
+
+     client = MongoClient(uri, tls=True, tlsAllowInvalidCertificates=True)
+     ```
+     Although for insecure environments or testing only. In production environments, always validate certificates.
+
+4. **Firewall or Network Issues**:
+   - Ensure no network blocks are preventing the connection, such as firewall settings. All necessary ports must be open, and SSL traffic should be allowed.
+
+5. **Check Environment and Dependency Conflicts**:
+   - Ensure there’s no conflict with other libraries that might influence SSL/TLS behavior by checking all dependencies in the environment.
+
+### Recommendations:
+- **Verify MongoDB Connection String and Network Access Settings in MongoDB Atlas**: Confirm that all whitelisted IP addresses are correct.
+- **Review MongoDB Logs**: Check server logs in MongoDB Atlas for more detailed error messages.
+- **Testing**: Test the connection from a local setup or another environment to rule out network issues or local configuration problems.
+
+**Code Adjustment**: Update the MongoDB connection initialization as part of troubleshooting:
+```python
+# Adjust your MongoDB client initialization with more options for testing
+from pymongo import MongoClient
+import os
+
+db_password = os.getenv('MONGO_DB_PASS')
+uri = f"mongodb+srv://curtarelli:{db_password}@fintrack.exdwy.mongodb.net/?retryWrites=true&w=majority"
+
+client = MongoClient(
+    uri,
+    tls=True,
+    tlsAllowInvalidCertificates=True  # Only for testing, use verified certificates in production
+)
+```
+
+By implementing these steps, you should be able to resolve the SSL handshake issue and successfully connect to your MongoDB instance.

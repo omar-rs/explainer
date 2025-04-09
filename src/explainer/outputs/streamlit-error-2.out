@@ -1,0 +1,22 @@
+The issue lies in this line of code:
+
+```python
+hist_values = np.histogram(data[DATE_COLUMN].dt, bins=24, range=(0,24))[0]
+```
+
+The error, `TypeError: '>=' not supported between instances of 'DatetimeProperties' and 'int'`, indicates that there is a type mismatch in your code. Specifically, `data[DATE_COLUMN].dt` returns a `DatetimeProperties` object, but you are attempting to use it in `np.histogram` with an integer `range`.
+
+The intention seems to be creating a histogram of the number of pickups by hour. However, the histogram data should be generated using the hour extracted from the datetime, not the entire datetime properties.
+
+Here's how to fix it:
+
+1. Extract the hour from the datetime column before computing the histogram.
+2. Use the `.hour` accessor to get the hours from the datetime object.
+
+Here’s a corrected version of the problematic line:
+
+```python
+hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
+```
+
+This code correctly extracts the hour part from each entry in the `date/time` column and calculates the histogram using these hour values. The rest of your code should work as expected after this fix.

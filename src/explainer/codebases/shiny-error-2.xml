@@ -1,0 +1,515 @@
+This file is a merged representation of a subset of the codebase, containing files not matching ignore patterns, combined into a single document by Repomix.
+The content has been processed where content has been compressed (code blocks are separated by ⋮---- delimiter).
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching these patterns are excluded: **/*.css
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Content has been compressed - code blocks are separated by ⋮---- delimiter
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+<additional_info>
+
+</additional_info>
+
+</file_summary>
+
+<directory_structure>
+rsconnect-python/
+  fintrack.json
+.gitignore
+ai_client.py
+app.py
+mongodb_connect.py
+README.md
+requirements.txt
+track.py
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="rsconnect-python/fintrack.json">
+{
+    "https://api.shinyapps.io": {
+        "server_url": "https://api.shinyapps.io",
+        "filename": "/home/curta/Documents/fintrack",
+        "app_url": "https://curta-16-11-1982.shinyapps.io/fintrack/",
+        "app_id": 14312322,
+        "app_guid": null,
+        "title": "fintrack",
+        "app_mode": "python-shiny",
+        "app_store_version": 1
+    }
+}
+</file>
+
+<file path=".gitignore">
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# UV
+#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#uv.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#pdm.lock
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
+.pdm.toml
+.pdm-python
+.pdm-build/
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
+
+# Ruff stuff:
+.ruff_cache/
+
+# PyPI configuration file
+.pypirc
+</file>
+
+<file path="ai_client.py">
+# Class to run chat completion calls using openai
+⋮----
+class ChatCompletion
+⋮----
+def __init__(self, api_key=None)
+⋮----
+def chat(self, prompt)
+⋮----
+response = self.client.chat.completions.create(
+</file>
+
+<file path="app.py">
+# Shiny app to collect user input on personal expenses and storage the data in a database
+# and display the data in a table and chart
+⋮----
+client = MongoDBConnect()
+ai_client = ChatCompletion()
+⋮----
+categories = {
+⋮----
+all_cat = list(categories.keys())#.insert(0, 'Total')
+⋮----
+app_ui = ui.page_fillable(
+⋮----
+def server(input: Inputs, output: Outputs, session: Session)
+⋮----
+@reactive.Effect
+@reactive.event(input.category)
+    def update_subcategories()
+⋮----
+selected_category = input.category()
+subcategories = categories.get(selected_category, [])
+⋮----
+@reactive.Effect
+@reactive.event(input.submit)
+    def submit_to_mongo()
+⋮----
+who = input.who()
+forwhom = input.forwhom()
+how = input.how()
+category = input.category()
+subcategory = input.subcategory()
+where = input.where()
+value = input.value()
+⋮----
+# condition to check if any input is empty and return a message for a modal warning
+⋮----
+m = ui.modal('', 'Preencha todos os campos para enviar!')
+⋮----
+track = {
+⋮----
+m = ui.modal('', 'Dados enviados com sucesso!')
+⋮----
+def df_update()
+⋮----
+df_final = prepare_df(input.year(), input.month())
+⋮----
+df_final = pd.merge(df_final, df_expected, on='category', how='right')
+⋮----
+.apply(highlight_SLA, axis=1)  # Apply row-wise
+⋮----
+@render.data_frame
+@reactive.event(input.update_table)
+    def df_all()
+⋮----
+df=pd.DataFrame(client.get_data())
+⋮----
+@output
+@render.plot
+    def plot()
+⋮----
+# maket the plot with a category filter
+cat = input.cat()
+start_actual = pd.Timestamp(year=int(input.year()), month=int(input.month()), day=1)
+end_actual = start_actual + pd.offsets.MonthEnd(0)
+df_plot = df_plot.query("category == @cat & day<=@end_actual.day")
+df_plot = df_plot.set_index('day')
+df_plot = df_plot[['expected_expected', 'expected_realized']]
+⋮----
+# Define the chat
+chat = ui.Chat(id="chat")
+⋮----
+@chat.on_user_submit
+    async def _()
+⋮----
+fintrack_md = df.to_markdown(index=False)
+question = chat.user_input()
+prompt = f"Here is a financial table:\n{fintrack_md}\n\nBased on this, {question}"
+answer = ai_client.chat(prompt)
+⋮----
+app = App(app_ui, server)
+</file>
+
+<file path="mongodb_connect.py">
+# Class to connect to MongoDB
+⋮----
+class MongoDBConnect
+⋮----
+def __init__(self)
+⋮----
+db_password = os.getenv('MONGO_DB_PASS')
+uri = f"mongodb+srv://curtarelli:{db_password}@fintrack.exdwy.mongodb.net/?appName=fintrack"
+⋮----
+# Create a new client and connect to the server
+⋮----
+# Send a ping to confirm a successful connection
+⋮----
+def get_data(self)
+⋮----
+data = self.db.fintrack.find()
+⋮----
+def bulk_load(self, file: str)
+⋮----
+df = pd.read_csv(file)
+⋮----
+def insert_data(self, data: dict)
+⋮----
+def delete_data(self, query: dict)
+⋮----
+def close_connection(self)
+</file>
+
+<file path="README.md">
+# fintrack
+application to manage personal finance
+</file>
+
+<file path="requirements.txt">
+annotated-types==0.7.0
+anyio==4.9.0
+appdirs==1.4.4
+asgiref==3.8.1
+certifi==2025.1.31
+click==8.1.8
+contourpy==1.3.1
+cycler==0.12.1
+distro==1.9.0
+dnspython==2.7.0
+fonttools==4.56.0
+h11==0.14.0
+htmltools==0.6.0
+httpcore==1.0.7
+httpx==0.28.1
+idna==3.10
+Jinja2==3.1.6
+jiter==0.9.0
+kiwisolver==1.4.8
+linkify-it-py==2.0.3
+markdown-it-py==3.0.0
+MarkupSafe==3.0.2
+matplotlib==3.10.1
+mdit-py-plugins==0.4.2
+mdurl==0.1.2
+narwhals==1.31.0
+numpy==2.2.4
+openai==1.68.2
+orjson==3.10.15
+packaging==24.2
+pandas==2.2.3
+pillow==11.1.0
+prompt_toolkit==3.0.50
+pydantic==2.10.6
+pydantic_core==2.27.2
+PyJWT==2.10.1
+pymongo==4.11.3
+pyparsing==3.2.1
+python-dateutil==2.9.0.post0
+python-multipart==0.0.20
+pytz==2025.1
+questionary==2.1.0
+rsconnect_python==1.25.2
+semver==3.0.4
+setuptools==77.0.3
+shiny==1.3.0
+six==1.17.0
+sniffio==1.3.1
+starlette==0.46.1
+tabulate==0.9.0
+tqdm==4.67.1
+typing_extensions==4.12.2
+tzdata==2025.1
+uc-micro-py==1.0.3
+uvicorn==0.34.0
+watchfiles==1.0.4
+wcwidth==0.2.13
+websockets==15.0.1
+</file>
+
+<file path="track.py">
+client = MongoDBConnect()
+⋮----
+def prepare_df(year, month)
+⋮----
+year = int(year)
+month = int(month)
+⋮----
+df=pd.DataFrame(client.get_data())
+⋮----
+df_totals = df.groupby(['year', 'month'])['value'].sum().reset_index()
+⋮----
+df_category = df.groupby(['year', 'month',  'category'])['value'].sum().reset_index()
+df_track = pd.concat([df_category, df_totals], ignore_index=True)
+⋮----
+df_track = df_track.merge(targets(), on='category', how='left').sort_values(by=['year', 'month', 'category'])
+⋮----
+def targets()
+⋮----
+data = {
+⋮----
+def max_day(year, month)
+⋮----
+def prep_expected_target(df, year, month, start, end, type)
+⋮----
+df_esperado_category = df.query("@start <= track_timestamp <= @end").groupby(['category','day'])['value'].sum().reset_index()
+⋮----
+df_all_day_category = pd.DataFrame(dict(category=c, day=d))
+df_esperado_category = pd.merge(df_all_day_category, df_esperado_category, on=['category','day'], how='left')
+⋮----
+# cruzar com o target e dividir o cum_value pelo target
+df_esperado_category = df_esperado_category.merge(targets(), on='category', how='left')
+⋮----
+# curvas de gasto acumulado total
+df_esperado_total = df.query("@start <= track_timestamp <= @end").groupby(['day'])['value'].sum().reset_index()
+⋮----
+df_all_day_total = pd.DataFrame({'day':list(range(1,32))})
+df_esperado_total = pd.merge(df_all_day_total, df_esperado_total, on=['day'], how='left')
+⋮----
+df_esperado_dia = pd.concat([df_esperado_category,df_esperado_total])
+df_esperado_dia = df_esperado_dia[['category', 'day', 'expected']]
+⋮----
+def expected_target(year, month)
+⋮----
+start = pd.to_datetime('now')+pd.tseries.offsets.MonthEnd(-1)-pd.DateOffset(months=3)
+end = pd.to_datetime('now')+pd.tseries.offsets.MonthEnd(-1)
+⋮----
+# curvas de gasto acumulado por categoria
+df_esperado_dia = prep_expected_target(df, year, month, start, end, 'expected')
+⋮----
+start_actual = pd.Timestamp(year=year, month=month, day=1)
+end_actual = start_actual + pd.offsets.MonthEnd(0)
+⋮----
+df_realizado_dia = prep_expected_target(df, year, month, start_actual, end_actual, 'actual')
+⋮----
+df_trend = df_esperado_dia.merge(df_realizado_dia, on=['category', 'day'], how='left', suffixes=('_expected', '_realized'))
+⋮----
+#filter df_day with the last actual day of the month from the df_final table
+last_day = df.query("year==@year & month==@month")['day'].max()
+⋮----
+df_esperado_ld = df_esperado_dia.query('day==@last_day')[['category', 'expected']]
+⋮----
+def highlight_SLA(row)
+⋮----
+green = 'background-color: green'
+yellow = 'background-color: yellow'
+pink = 'background-color: red'
+⋮----
+styles = [''] * len(row)  # Default empty styles for all columns
+</file>
+
+</files>

@@ -1,0 +1,33 @@
+The error messages in the output logs suggest several issues that need to be addressed to resolve the rendering and publication issues:
+
+1. **Missing Theme File:**
+    - A recurring warning about "Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss" indicates that the specified SCSS theme file is missing. Ensure that the custom.scss file exists in the specified path, or update your Quarto project configuration to point to the correct location of the theme file.
+
+2. **Missing R Packages:**
+    - The warning "The downlit and xml2 packages are required for code linking" suggests that these R packages are not available. You should install them to handle code linking properly. You can install them using R:
+      ```r
+      install.packages(c("downlit", "xml2"))
+      ```
+
+3. **Math Conversion Warnings:**
+    - There are multiple warnings related to the conversion of TeX math strings which indicate syntax issues. Review the TeX math expressions in your source files and ensure they follow the correct syntax.
+
+4. **Resource Not Found for Images:**
+    - The warning about being unable to fetch "man/figures/logo.png" indicates that the image paths are incorrect or the files are missing. Ensure that these image files are present in the specified paths and accessible from the rendering environment.
+
+5. **Remaining File System Error:**
+    - The final error "No such file or directory (os error 2): rename '/tmp/vivid-blender/rendered-output-1/README_test.html'" suggests a failure during the file renaming process. This could occur if the file was never created due to earlier issues, or if there are permissions problems.
+
+   - To circumvent this, ensure your Quarto project is configured correctly to generate the README_test.html file, and verify that the Cloud environment has the necessary permissions to both create and rename files.
+
+6. **Entrypoint File Specific Issue:**
+   - The entrypoint file specified is `tech_notes/810_pharmaverse_NOTES.qmd`. Check this file for configuration issues. Verify links, theme references, images, and code blocks are correctly specified and available.
+
+To resolve these issues, address each of these points:
+
+- Ensure all referenced files, such as images and themes, are correctly pointed to and exist.
+- Install any missing R packages that are mentioned, particularly those needed for rendering or specific functionality.
+- Fix math syntax errors by double-checking the expressions for any syntax mistakes.
+- Make sure your Cloud environment can access any external resources or consider pre-rendering parts of your document locally before publishing.
+
+With these fixes, the rendering and publication process should proceed without errors.

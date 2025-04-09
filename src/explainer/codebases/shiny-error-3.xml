@@ -1,0 +1,1147 @@
+This file is a merged representation of a subset of the codebase, containing files not matching ignore patterns, combined into a single document by Repomix.
+The content has been processed where content has been compressed (code blocks are separated by ⋮---- delimiter).
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching these patterns are excluded: **/*.css
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Content has been compressed - code blocks are separated by ⋮---- delimiter
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+<additional_info>
+
+</additional_info>
+
+</file_summary>
+
+<directory_structure>
+app_old.py
+app.py
+hard_code_test.py
+requirements.txt
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="app_old.py">
+# to deploy in terminal
+# rsconnect add --account habadio --name habadio --token 8D654CD9CCCEBE179F6DB7BE6764D040 --secret No1MZ0K+IHtQPDcwd7fNbJliPUVvvlcL5sJuuR3v
+# rsconnect deploy shiny /Users/helenabadiotakis/Downloads/ChanLab/shiny_manuscript --name habadio --title shiny-manuscript
+⋮----
+# imports
+⋮----
+# set default and alternative statistical tests
+default_tests = {
+⋮----
+alternative_tests = {
+⋮----
+variable_types = list(default_tests.keys())
+⋮----
+# get p-values from statistical test
+################################################################################
+### ONLY SUPPORTS 2 GROUPS AT THE MOMENT, NEED TO UPDATE TO MULTIPLE GROUPS ####
+⋮----
+def run_statistical_test(df, group_var, var_type, var_name, decimal_places)
+⋮----
+groups = df[group_var].unique()
+⋮----
+return None  # Only supports two-group comparisons
+⋮----
+group1 = df[df[group_var] == groups[0]][var_name].dropna()
+group2 = df[df[group_var] == groups[1]][var_name].dropna()
+⋮----
+test_type = default_tests[var_type]
+⋮----
+contingency_table = pd.crosstab(df[var_name], df[group_var])
+⋮----
+elif test_type == 'fisher-freeman-halton': # UPDATE
+⋮----
+# rpy2.robjects.numpy2ri.activate()
+# stats = importr('stats')
+# m = np.array([[4,4],[4,5],[10,6]])
+# res = stats.fisher_test(m)
+# print 'p-value: {}'.format(res[0][0])
+⋮----
+p_value = None
+⋮----
+p_value = round(p_value, decimal_places)
+⋮----
+# Function to perform aggregation analysis based on the variable type
+def perform_aggregate_analysis(df, group_var, var_type, var_name, decimal_places, output_format, col_var_config)
+⋮----
+# print(group_var, test_type, var_name, decimal_places, output_format, col_var_config)
+⋮----
+# Check if the variable has a "Yes" option
+yes_values = ['Yes', 'Y', 'y', 'yes', 1]
+yn_var = None
+⋮----
+var_options = df[var_name].unique()
+⋮----
+yn_var=val
+⋮----
+group1_total = len(group1)
+group2_total = len(group2)
+⋮----
+# Default result structure
+result = {}
+⋮----
+# count occurrences of yn_var in group 1 and group 2
+group1_sum = (group1 == yn_var).sum()
+group2_sum = (group2 == yn_var).sum()
+⋮----
+# Store the aggregate values in var_config
+⋮----
+group1_sum = (group1 == var_options[i]).sum()
+group2_sum = (group2 == var_options[i]).sum()
+⋮----
+# Aggregate: Mean and Standard Deviation
+group1_mean = round(group1.mean(), decimal_places)
+group2_mean = round(group2.mean(), decimal_places)
+⋮----
+group1_std = round(group1.std(), decimal_places)
+group2_std = round(group2.std(), decimal_places)
+⋮----
+# Aggregate: Median and Interquartile Range (IQR)
+group1_median = group1.median()
+group2_median = group2.median()
+group1_iqr = [group1.quantile(0.25), group1.quantile(0.75)]
+group2_iqr = [group2.quantile(0.25), group2.quantile(0.75)]
+⋮----
+# Function to create Word table from var_config
+def create_word_table(df,var_config, group_var, subheadings)
+⋮----
+# Create a new Word Document
+doc = Document()
+⋮----
+# Create the table with columns for Variable, Group 1, Group 2, P-Value
+table = doc.add_table(rows=1, cols=4)
+⋮----
+hdr_cells = table.rows[0].cells
+⋮----
+row.paragraphs[0].runs[0].font.bold = True  # Bold formatting for the subheading row
+⋮----
+group1_size = len(df[df[group_var] == df[group_var].unique()[0]])
+group2_size = len(df[df[group_var] == df[group_var].unique()[1]])
+grp_cells = table.add_row().cells
+⋮----
+# Loop through subheadings
+⋮----
+# Add a row for the subheading (this is the row header)
+row_cells = table.add_row().cells
+row_cells[0].text = f"{subheading_name}"  # Subheading name in the first column
+row_cells[1].text = ''  # Leave empty for Group 1
+row_cells[2].text = ''  # Leave empty for Group 2
+row_cells[3].text = ''  # Leave empty for P-Value
+⋮----
+row_cells[0].paragraphs[0].runs[0].font.bold = True  # Bold formatting for the subheading row
+⋮----
+# Get and sort all variables for the current subheading
+subheading_vars = [col for col, config in var_config.items() if config['subheading'] == subheading_name]
+sorted_subheading_vars = sorted(subheading_vars, key=lambda x: var_config[x]["position"])
+⋮----
+# Add a row for each variable under the current subheading
+⋮----
+var = var_config[var]["name"]
+var_type = var_config[var]["type"]
+⋮----
+var_options = df[var].unique()
+⋮----
+# Apply formatting to the variable name cell (indentation and smaller font)
+# para = row_cells[0].paragraphs[0]
+# run = para.add_run(row_cells[0].text)
+# run.font.size = Pt(8)  # Smaller font size
+# para.paragraph_format.left_indent = Pt(12)  # Indentation for the variable name
+⋮----
+# Save the document to a file
+doc_filename = "statistical_analysis_results.docx"
+⋮----
+# Save configuration to a .pkl file
+def save_config(config, filename="config.pkl")
+⋮----
+# Load configuration from a .pkl file
+def load_config(filename="config.pkl")
+⋮----
+config = pickle.load(f)
+⋮----
+######################### Shiny App Layout #####################################
+⋮----
+app_ui = ui.page_fluid(
+⋮----
+# Table Name
+⋮----
+# Grouping Variable
+⋮----
+# ui.input_select("group_var", "Select Grouping Variable", choices=[], selected=None),
+⋮----
+# Formatting Options
+⋮----
+# Subheadings
+⋮----
+# Variable Selection UI (dynamically generated)
+⋮----
+# Calculate
+⋮----
+# Download Button
+⋮----
+# Save Configuration
+⋮----
+######################### Shiny App Server #####################################
+⋮----
+def server(input, output, session)
+⋮----
+data = reactive.Value({})  # Store uploaded data
+selected_columns = reactive.Value([])  # Store selected columns
+var_config = reactive.Value({})  # Store variable settings dynamically
+# subheadings = reactive.Value({0:"",1:None,2:None,3:None})  # Store subheadings
+group_var = reactive.Value(None)  # Store grouping variable
+decimal_places = reactive.Value(None)
+output_format = reactive.Value(None)
+⋮----
+# Reactive values to track column assignments per subheading
+subheadings = {
+⋮----
+@output
+@render.ui
+    def select_columns()
+⋮----
+@reactive.effect
+    def _()
+⋮----
+file_info = input.data_file()[0]
+ext = os.path.splitext(file_info["name"])[-1]
+⋮----
+df = pd.read_csv(file_info["datapath"])  # Reads header row by default
+⋮----
+df = pd.read_excel(file_info["datapath"])
+⋮----
+data.set(df)  # Store data in reactive value
+columns = df.columns.tolist()  # Get column names
+columns = [re.sub(r'\W+', '', col) for col in columns]
+column_dict = {}
+⋮----
+default_type = "Omit"
+default_position = 100
+⋮----
+# Store variable settings in a dictionary
+⋮----
+@reactive.calc
+    def column_selectize()
+⋮----
+# Set Grouping Variable for analysis
+⋮----
+@output
+@render.ui
+    def grouping_variable()
+⋮----
+choices = input.column_selectize()
+⋮----
+@reactive.calc
+    def update_group_var()
+⋮----
+# Update columns under subheadings
+def generate_subheading_ui(subheading_key)
+⋮----
+columns = subheadings[subheading_key]()
+⋮----
+#     ui.input_text(
+#         f"name_{col}",
+#         "Column Name",
+#         value=var_config.get()[col]["name"],
+#     ),
+#     ui.input_select(
+#         f"var_type_{col}",
+#         "Variable Type",
+#         variable_types,
+#         # selected=var_config.get()[col]["type"],
+⋮----
+#     col_widths=(4, 4, 4),
+#     class_="draggable-list",
+#     id=f"{subheading_key}_{col}"
+⋮----
+width=1, # Each card takes up half the row
+⋮----
+# return ui.card(
+#     ui.div(
+#         *[
+#             ui.div(column, class_="draggable-item", id=f"{subheading_key}_{column}")
+#             for column in columns
+#         ],
+#         class_="sortable-list", id=subheading_key
+#     ),
+#     class_="droppable-area"
+# )
+⋮----
+@output
+@render.ui
+    def var_settings_1()
+⋮----
+@output
+@render.ui
+    def var_settings_2()
+⋮----
+@output
+@render.ui
+    def var_settings_3()
+⋮----
+@output
+@render.ui
+    def var_settings_4()
+⋮----
+# Assign all selected columns initially to Subheading 1
+# @reactive.effect
+# def initialize_columns():
+#     available_columns = input.column_selectize()
+#     if available_columns and not any(subheadings[key]() for key in subheadings):
+#         subheadings["subheading_1"].set(available_columns)
+⋮----
+# # Create dynamic UI outputs for each subheading
+# for key in subheadings:
+#     output[key.replace("subheading", "var_settings")] = render.ui(generate_subheading_ui(key))
+⋮----
+# # JavaScript-based drag-and-drop event handling (requires external JS)
+# ui.include_script("https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js")
+# ui.script(
+#     """
+#     document.addEventListener("DOMContentLoaded", function () {
+#         const subheadings = ["subheading_1", "subheading_2", "subheading_3", "subheading_4"];
+#         subheadings.forEach(subheading => {
+#             new Sortable(document.getElementById(subheading), {
+#                 group: "shared",
+#                 animation: 150,
+#                 onEnd: function (evt) {
+#                     const movedItem = evt.item.textContent;
+#                     const from = evt.from.id;
+#                     const to = evt.to.id;
+#                     Shiny.setInputValue("move_variable", {variable: movedItem, from: from, to: to}, {priority: "event"});
+#                 }
+#             });
+#         });
+#     });
+⋮----
+# )
+⋮----
+# Render dynamic UI for each subheading
+⋮----
+# JavaScript to enable drag-and-drop using SortableJS
+⋮----
+# Handle drag-and-drop updates in the server
+⋮----
+@reactive.effect
+    def update_subheadings()
+⋮----
+drag_event = input.dragged_var()
+⋮----
+drag_data = json.loads(drag_event)
+moved_var = drag_data["movedVar"]
+new_group = drag_data["newGroup"]
+⋮----
+# Remove from old subheading
+⋮----
+# Add to new subheading
+⋮----
+# # Reactively handle moving variables between subheadings
+⋮----
+# def handle_move():
+#     move_data = input.move_variable()
+#     if not move_data:
+#         return
+⋮----
+#     variable, from_section, to_section = move_data["variable"], move_data["from"], move_data["to"]
+⋮----
+#     if from_section in subheadings and to_section in subheadings:
+#         # Remove from old list
+#         old_list = subheadings[from_section]()
+#         if variable in old_list:
+#             old_list.remove(variable)
+#             subheadings[from_section].set(old_list)
+⋮----
+#         # Add to new list
+#         new_list = subheadings[to_section]()
+#         new_list.append(variable)
+#         subheadings[to_section].set(new_list)
+⋮----
+# @output
+# @render.ui
+# def var_settings_1():
+#     if var_config.get():
+#         columns = selected_columns.get()
+#         subheading_cols = []
+#         for col in columns:
+#             if var_config.get()[col]["subheading"] == 0:
+#                 subheading_cols.append(col)
+⋮----
+#         return ui.layout_column_wrap(
+#         *[
+#             ui.card(
+#                 ui.h5(col),  # Column name title
+#                 ui.input_text(
+#                     f"name_{col}",
+#                     "Column Name",
+#                     value=var_config.get()[col]["name"],
+#                 ),
+#                 ui.input_select(
+#                     f"var_type_{col}",
+#                     "Variable Type",
+#                     variable_types,
+#                     selected=var_config.get()[col]["type"],
+⋮----
+#                     f"subheading_{col}",
+#                     "Subheading",
+#                     subheadings.get().values(),
+#                     selected=var_config.get()[col]["subheading"]
+⋮----
+#                     f"position_{col}",
+#                     "Position",
+#                     [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+#                     selected=100,
+⋮----
+#                 col_widths=(3, 3, 2, 2, 2),
+#                 draggable=True,
+#             )
+#             for col in subheading_cols
+#         ],
+#         width='100%', # Each card takes up half the row
+#         )
+⋮----
+# @render.ui # @reactive.event()# @reactive.event(input.data_file)
+# @reactive.event(input.subheading_1)
+# @reactive.event(input.subheading_3)
+# @reactive.event(input.subheading_4)
+# def var_settings_2():
+⋮----
+#             if var_config.get()[col]["subheading"] == 1:
+⋮----
+#                     "Assign Subheading",
+⋮----
+#                     "Assign Position under Subheading",
+⋮----
+#                 # col_widths=(4, 3, 3, 3, 12),
+⋮----
+# file_info = input.data_file()[0]
+# ext = os.path.splitext(file_info["name"])[-1]
+⋮----
+# if ext == ".csv":
+#     df = pd.read_csv(file_info["datapath"])  # Reads header row by default
+# elif ext == ".xlsx":
+#     df = pd.read_excel(file_info["datapath"])
+⋮----
+# data.set(df)  # Store data in reactive value
+# columns = df.columns.tolist()  # Get column names
+# columns = [re.sub(r'\W+', '', col) for col in columns]
+⋮----
+# subheading_options = [""] + [s for s in subheadings.get().values() if s]
+# default_type = "Omit"
+# default_position = 100
+⋮----
+# # Store variable settings in a dictionary
+# if not var_config.get():
+#     var_config.set({col: {
+#         "type": default_type,
+#         "name": col,
+#         "subheading": "None",
+#         "position": default_position,
+#         "p_value": None,
+#     } for col in columns})
+⋮----
+# Output grouping variable selection UI dynamically
+# ui.update_select(
+#     "group_var",
+#     choices=columns
+# )
+⋮----
+#     return ui.layout_column_wrap(
+#     *[
+#         ui.card(
+#             ui.h5(col),  # Column name title
+#             ui.input_select(
+#                 f"var_type_{col}",
+#                 "Variable Type",
+#                 variable_types,
+#                 # selected=var_config.get()[col]["type"],
+#             ),
+#             ui.input_text(
+#                 f"name_{col}",
+#                 "Column Name",
+#                 value=var_config.get()[col]["name"],
+⋮----
+#                 f"subheading_{col}",
+#                 "Assign Subheading",
+#                 subheading_options,
+#                 # selected=var_config.get()[col]["subheading"]
+⋮----
+#                 f"position_{col}",
+#                 "Assign Position under Subheading",
+#                 [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+#                 selected=100,
+⋮----
+#         )
+#         for col in columns
+#     ],
+#     width=1 / 2, # Each card takes up half the row
+⋮----
+# Update variable settings dynamically when inputs change
+⋮----
+@reactive.effect
+    def update_var_config()
+⋮----
+df = data.get()
+⋮----
+updated_config = var_config.get()
+⋮----
+var_config.set(updated_config)  # Update stored config
+⋮----
+# Perform statistical analysis when the "Calculate" button is clicked
+⋮----
+@reactive.event(input.calculate)
+    def calculate_statistical_analysis()
+⋮----
+group_var = group_var.get()  # Get the selected grouping column
+decimals_pval = input.decimals_pvalue()
+decimals_tab = input.decimals_table()
+output_format = input.output_format()
+⋮----
+# Check if grouping column is selected
+⋮----
+# Perform statistical analysis using the grouping variable
+⋮----
+var_type = var_config.get()[col]["type"]
+⋮----
+p_value = run_statistical_test(df, group_var, var_type, col, decimals_pval)
+⋮----
+# Store the p-value in the var_config dictionary
+⋮----
+# Perform aggregate analysis and update var_config with the results
+aggregate_result = perform_aggregate_analysis(df, group_var, var_type, col, decimals_tab, output_format, updated_config[col])
+⋮----
+# Download Button - Trigger to save table in .docx format
+# Updated download_table function
+⋮----
+@session.download()
+    def download_table()
+⋮----
+# Retrieve the data and var_config
+⋮----
+return None  # Return None if no data is available
+⋮----
+# Generate the Word table document
+doc_filename = create_word_table(data.get(), updated_config, group_var.get(), subheadings.get())
+⋮----
+return doc_filename  # Return the Word document file for download
+⋮----
+# @reactive.event(input.download_table)
+# def download_table():
+#     df = data.get()
+#     if df is None or not isinstance(df, pd.DataFrame) or df.empty:
+#         return
+⋮----
+# # Save Configuration Button - Trigger to save settings
+# @reactive.event(input.save_config)
+# def save_configuration():
+#     config_to_save = {
+#         "var_config": var_config.get(),
+#         "subheadings": subheadings.get(),
+#         "group_var": group_var.get()
+#     }
+#     save_config(config_to_save)  # Save the config to a file
+#     return "Configuration saved!"
+⋮----
+# Load Configuration Button - Trigger to load saved settings
+# @reactive.event(input.load_config)
+# def load_configuration():
+#     ui.input_file("config_file", "Upload pkl file", accept=[".pkl"])
+#     config = load_config(input.config_file)  # Load the config from a file
+#     if config:
+#         var_config.set(config["var_config"])
+#         subheadings.set(config["subheadings"])
+#         group_var.set(config["group_var"])
+#         return "Configuration loaded!"
+#     return "No saved configuration found."
+⋮----
+app = App(app_ui, server)
+</file>
+
+<file path="app.py">
+# imports
+⋮----
+# set default and alternative statistical tests
+default_tests = {
+⋮----
+alternative_tests = {
+⋮----
+missing_values = ["NA", "N/A", "NAN", "na", "n/a", "nan", "Na", "unk", "unknown", "Unk", "Unknown", "UNKNOWN"] # List of strings representing unknown or missing data
+⋮----
+# variable_types = [
+#     "Omit",
+#     "Binary (i.e. Smoking, Diabetes, Hypertension)",
+#     "Categorical (Dichotomous) (i.e. Sex)",
+#     "Categorical (Multinomial) (i.e. Race)",
+#     "Ratio Continuous (i.e., Age, BMI)",
+#     "Ordinal Discrete (i.e., GCS, Tumor Grade)",
+# ]
+⋮----
+variable_types = list(default_tests.keys())
+⋮----
+# get p-values from statistical test
+################################################################################
+### ONLY SUPPORTS 2 GROUPS AT THE MOMENT, NEED TO UPDATE TO MULTIPLE GROUPS ####
+⋮----
+def run_statistical_test(df, group_var, var_type, var_name, decimal_places)
+⋮----
+groups = df[group_var].dropna().unique()
+⋮----
+return None  # Only supports two-group comparisons
+⋮----
+group1 = df[df[group_var] == groups[0]][var_name].dropna()
+group2 = df[df[group_var] == groups[1]][var_name].dropna()
+⋮----
+test_type = default_tests[var_type]
+⋮----
+contingency_table = pd.crosstab(df[var_name], df[group_var])
+⋮----
+elif test_type == 'fisher-freeman-halton': # UPDATE
+⋮----
+p_value = None
+⋮----
+p_value = round(p_value, decimal_places)
+⋮----
+# Function to perform aggregation analysis based on the variable type
+def perform_aggregate_analysis(df, group_var, var_type, var_name, decimal_places, output_format, col_var_config)
+⋮----
+# Check if the variable has a "Yes" option
+yes_values = ['Yes', 'Y', 'y', 'yes', 1]
+yn_var = None
+⋮----
+var_options = df[var_name].dropna().unique()
+⋮----
+yn_var=val
+⋮----
+group1_total = len(group1)
+group2_total = len(group2)
+⋮----
+# count occurrences of yn_var in group 1 and group 2
+group1_sum = (group1 == yn_var).sum()
+group2_sum = (group2 == yn_var).sum()
+⋮----
+# Store the aggregate values in var_config
+⋮----
+group1_sum = (group1 == var_options[i]).sum()
+group2_sum = (group2 == var_options[i]).sum()
+⋮----
+# Aggregate: Mean and Standard Deviation
+group1_mean = round(group1.mean(), decimal_places)
+group2_mean = round(group2.mean(), decimal_places)
+⋮----
+group1_std = round(group1.std(), decimal_places)
+group2_std = round(group2.std(), decimal_places)
+⋮----
+# Aggregate: Median and Interquartile Range (IQR)
+group1_median = group1.median()
+group2_median = group2.median()
+group1_iqr = [group1.quantile(0.25), group1.quantile(0.75)]
+group2_iqr = [group2.quantile(0.25), group2.quantile(0.75)]
+⋮----
+# Function to create Word table from var_config
+def create_word_table(df,var_config, group_var, subheadings, subheading_names, table_name)
+⋮----
+# Create a new Word Document
+doc = Document()
+⋮----
+# Create the table with columns for Variable, Group 1, Group 2, P-Value
+table = doc.add_table(rows=1, cols=4)
+⋮----
+hdr_cells = table.rows[0].cells
+⋮----
+row.paragraphs[0].runs[0].font.bold = True  # Bold formatting for the subheading row
+⋮----
+group1_size = len(df[df[group_var] == df[group_var].unique()[0]])
+group2_size = len(df[df[group_var] == df[group_var].unique()[1]])
+grp_cells = table.add_row().cells
+⋮----
+# Loop through subheadings
+⋮----
+subheading_name = subheading_names[sub]()
+⋮----
+# Add a row for the subheading (this is the row header)
+row_cells = table.add_row().cells
+row_cells[0].text = f"{subheading_name}"  # Subheading name in the first column
+row_cells[1].text = ''  # Leave empty for Group 1
+row_cells[2].text = ''  # Leave empty for Group 2
+row_cells[3].text = ''  # Leave empty for P-Value
+⋮----
+row_cells[0].paragraphs[0].runs[0].font.bold = True  # Bold formatting for the subheading row
+⋮----
+# Get and sort all variables for the current subheading
+subheading_vars = [col for col, config in var_config.items() if config["subheading"] == sub]
+subheading_vars = [col for col in subheading_vars if col != group_var]
+sorted_subheading_vars = sorted(subheading_vars, key=lambda x: var_config[x]["position"])
+⋮----
+# Add a row for each variable under the current subheading
+⋮----
+var_name = var_config[var]["name"]
+var_type = var_config[var]["type"]
+⋮----
+# row_cells[0].paragraphs[0].runs[0].font.underline = True
+⋮----
+var_options = df[var].dropna().unique()
+⋮----
+# Save the document to a file
+table_name = re.sub(r'\W+', '', table_name.strip())
+⋮----
+table_name = "Statistical_Analysis"
+doc_filename = f"{table_name}.docx"
+⋮----
+# Save configuration to a .pkl file
+def save_config(config, filename="config.pkl")
+⋮----
+# Load configuration from a .pkl file
+def load_config(filename="config.pkl")
+⋮----
+config = pickle.load(f)
+⋮----
+######################### Shiny App Layout #####################################
+⋮----
+app_ui = ui.page_fluid(
+⋮----
+# Table Name
+⋮----
+# Grouping Variable
+⋮----
+# Formatting Options
+⋮----
+# ui.card(ui.input_radio_buttons("remove_blanks", ui.tags.span("Remove Unknown Values ",ui.tooltip(ui.icon("info-circle"),"Customize how each variable appears in the final table.")), ["No (Default)", "Yes"]),
+⋮----
+# Subheadings
+⋮----
+# Variable Selection UI (dynamically generated)
+⋮----
+# Calculate
+⋮----
+# Download Button
+⋮----
+# Save Configuration
+⋮----
+######################### Shiny App Server #####################################
+⋮----
+def server(input, output, session)
+⋮----
+data = reactive.Value({})  # Store uploaded data
+cleaned_data = reactive.Value({})  # Store cleaned data
+selected_columns = reactive.Value([])  # Store selected columns
+var_config = reactive.Value({})  # Store variable settings dynamically
+group_var = reactive.Value(None)  # Store grouping variable
+prev_group_var = reactive.Value(None)
+subheadings = { # Reactive values to track column assignments per subheading
+subheading_names = { # Reactive values to track column assignments per subheading
+⋮----
+decimal_places = reactive.Value(None)
+output_format = reactive.Value(None)
+⋮----
+@output
+@render.ui
+    def select_columns()
+⋮----
+@reactive.effect
+    def _()
+⋮----
+file_info = input.data_file()[0]
+ext = os.path.splitext(file_info["name"])[-1]
+⋮----
+df = pd.read_csv(file_info["datapath"])  # Reads header row by default
+⋮----
+df = pd.read_excel(file_info["datapath"])
+⋮----
+# Clean column names: strip and remove non-alphanumeric chars
+clean_columns = [re.sub(r'\W+', '', col.strip()) for col in df.columns]
+⋮----
+df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+⋮----
+data.set(df)  # Store data in reactive value
+clean_df = df.replace(missing_values, np.nan)
+cleaned_data.set(clean_df)  # Store cleaned data in reactive value
+⋮----
+column_dict = {col: col for col in df.columns}
+⋮----
+default_type = "Omit"
+default_position = 15
+⋮----
+# Store variable settings in a dictionary
+⋮----
+def column_selectize()
+⋮----
+available_columns = input.column_selectize()
+⋮----
+all_assigned = set().union(*[set(subheadings[s]()) for s in subheadings])
+⋮----
+# Update dropdown choices but don't set selected value here
+⋮----
+df = data.get()
+⋮----
+for subheading in subheadings: # Remove from all subheadings if the column is not selected
+⋮----
+@reactive.effect
+    def sync_column_selection_with_subheadings()
+⋮----
+@reactive.effect
+    def watch_column_changes()
+⋮----
+@reactive.effect
+    def manage_group_var()
+⋮----
+available = input.column_selectize()
+selected = input.grouping_var()
+⋮----
+# Set Grouping Variable for analysis
+⋮----
+@output
+@render.ui
+    def grouping_variable()
+⋮----
+# Update columns under subheadings
+def generate_subheading_ui(subheading_key)
+⋮----
+df = cleaned_data.get()
+⋮----
+columns = subheadings[subheading_key]()
+⋮----
+# col_widths=(3, 3, 3, 3),
+⋮----
+# width=1,
+⋮----
+@output
+@render.ui
+    def var_settings_1()
+⋮----
+@output
+@render.ui
+    def var_settings_2()
+⋮----
+@output
+@render.ui
+    def var_settings_3()
+⋮----
+@output
+@render.ui
+    def var_settings_4()
+⋮----
+# JavaScript to enable drag-and-drop using SortableJS
+⋮----
+# Handle drag-and-drop updates in the server
+⋮----
+@reactive.effect
+    def update_subheadings()
+⋮----
+drag_event = input.dragged_var()
+⋮----
+drag_data = json.loads(drag_event)
+moved_var = drag_data["movedVar"]
+new_group = drag_data["newGroup"]
+⋮----
+# Remove from old subheading
+⋮----
+# Add to new subheading
+⋮----
+# Update variable settings dynamically when inputs change
+⋮----
+@reactive.effect
+    def update_var_config()
+⋮----
+updated_config = var_config.get()
+⋮----
+# for col in df.columns:
+⋮----
+new_subheading = input[f"subheading_{col}"]()
+old_subheading = var_config.get()[col]["subheading"]
+⋮----
+new_subheading_mapped = next((k for k, v in subheading_names.items() if v() == new_subheading), None)
+old_subheading_mapped = next((k for k, v in subheading_names.items() if v() == old_subheading), None)
+⋮----
+# old_subheading_mapped = next((k for k, v in subheading_names.items() if v() == old_subheading), None)
+# subheading_names[old_subheading_mapped].set(new_subheading)
+# new_subheading_mapped = next((k for k, v in subheading_names.items() if v() == new_subheading), None)
+⋮----
+# If the subheading has changed, move the column to the new subheading
+⋮----
+# Remove the variable from the current subheading
+⋮----
+# Add the variable to the new subheading
+⋮----
+# Debugging print statement to track the change
+⋮----
+var_config.set(updated_config)  # Update stored config
+⋮----
+@reactive.effect
+    def update_subheading_names()
+⋮----
+for key in subheadings.keys():  # subheadings = {"subheading_1": ..., etc.}
+⋮----
+text_input = input[key]()
+⋮----
+# Perform statistical analysis when the "Calculate" button is clicked
+⋮----
+@reactive.effect
+@reactive.event(input.calculate)
+    def calculate_statistical_analysis()
+⋮----
+curr_group_var = group_var.get()  # Get the selected grouping column
+decimals_pval = input.decimals_pvalue()
+decimals_tab = input.decimals_table()
+output_format = input.output_format()
+⋮----
+# Perform statistical analysis using the grouping variable
+⋮----
+var_type = updated_config[col]["type"]
+⋮----
+p_value = run_statistical_test(df, curr_group_var, var_type, col, decimals_pval)
+⋮----
+# Store the p-value in the var_config dictionary
+⋮----
+# Perform aggregate analysis and update var_config with the results
+aggregate_result = perform_aggregate_analysis(df, curr_group_var, var_type, col, decimals_tab, output_format, updated_config[col])
+⋮----
+# Download Button - Trigger to save table in .docx format
+# Updated download_table function
+⋮----
+@session.download()
+    def download_table()
+⋮----
+# Retrieve the data and var_config
+⋮----
+return None  # Return None if no data is available
+⋮----
+# Generate the Word table document
+doc_filename = create_word_table(df, updated_config, group_var.get(), subheadings, subheading_names, input.table_name())
+⋮----
+return doc_filename  # Return the Word document file for download
+⋮----
+app = App(app_ui, server)
+</file>
+
+<file path="hard_code_test.py">
+# to deploy in terminal
+# rsconnect add --account habadio --name habadio --token 8D654CD9CCCEBE179F6DB7BE6764D040 --secret No1MZ0K+IHtQPDcwd7fNbJliPUVvvlcL5sJuuR3v
+# rsconnect deploy shiny /Users/helenabadiotakis/Downloads/ChanLab/shiny_manuscript --name habadio --title shiny-manuscript
+⋮----
+# https://metaboanalyst.ca/
+# check iqr decimal placess
+# option to add total as another group
+# ttest shapiro wilk test - normality test
+⋮----
+"""
+default no columns checked, 
+step 1: upload file, show exa
+step 2: select columns to include. only when check does it create a card to name/customize
+step 3: input table_name, define subheadings
+step 4: move up customization, dec places (one for p-values- default to 3 & table values), output format
+step 5: customize variables in card, add option for grouping here-> 
+    see if can include under subheadings and select + button to add
+embed pic of variable options 
+
+TernTables - Medical Research Table Creator
+"""
+# step 2: checkboxes for which columns to include in the table
+⋮----
+# imports
+⋮----
+# import rpy2.robjects.numpy2ri
+# from rpy2.robjects.packages import importr
+⋮----
+# set default and alternative statistical tests
+default_tests = {
+⋮----
+alternative_tests = {
+⋮----
+variable_types = list(default_tests.keys())
+⋮----
+file_path = '/Users/helenabadiotakis/Downloads/misc_materials/example_data_test.csv'
+df = pd.read_csv(file_path)  # Reads header row by default
+⋮----
+columns = df.columns.tolist()  # Get column names
+columns = [re.sub(r'\W+', '', col) for col in columns]
+⋮----
+subheadings = ["Demographics", "Donor", "Other"]
+⋮----
+# Store variable settings in a dictionary
+var_config = {}
+⋮----
+grouping_var = "group"
+⋮----
+decimal_places = 2
+# output_format = "n (%)"
+output_format = "% (n)"
+⋮----
+# get p-values from statistical test
+################################################################################
+### ONLY SUPPORTS 2 GROUPS AT THE MOMENT, NEED TO UPDATE TO MULTIPLE GROUPS ####
+⋮----
+def run_statistical_test(df, group_var, var_type, var_name, decimal_places)
+⋮----
+groups = df[group_var].unique()
+⋮----
+return None  # Only supports two-group comparisons
+⋮----
+group1 = df[df[group_var] == groups[0]][var_name].dropna()
+group2 = df[df[group_var] == groups[1]][var_name].dropna()
+⋮----
+test_type = default_tests[var_type]
+⋮----
+contingency_table = pd.crosstab(df[var_name], df[group_var])
+⋮----
+# rpy2.robjects.numpy2ri.activate()
+# stats = importr('stats')
+# m = np.array([[4,4],[4,5],[10,6]])
+# res = stats.fisher_test(m)
+# print 'p-value: {}'.format(res[0][0])
+⋮----
+p_value = None
+⋮----
+p_value = round(p_value, decimal_places)
+⋮----
+# Function to perform aggregation analysis based on the variable type
+def perform_aggregate_analysis(df, group_var, var_type, var_name, decimal_places, output_format, col_var_config)
+⋮----
+# print(group_var, test_type, var_name, decimal_places, output_format, col_var_config)
+⋮----
+# Check if the variable has a "Yes" option
+yes_values = ['Yes', 'Y', 'y', 'yes', 1]
+yn_var = None
+⋮----
+var_options = df[var_name].unique()
+⋮----
+yn_var=val
+⋮----
+group1_total = len(group1)
+group2_total = len(group2)
+⋮----
+# Default result structure
+result = {}
+⋮----
+# count occurrences of yn_var in group 1 and group 2
+group1_sum = (group1 == yn_var).sum()
+group2_sum = (group2 == yn_var).sum()
+⋮----
+# Store the aggregate values in var_config
+⋮----
+group1_sum = (group1 == var_options[i]).sum()
+group2_sum = (group2 == var_options[i]).sum()
+⋮----
+# Aggregate: Mean and Standard Deviation
+group1_mean = round(group1.mean(), decimal_places)
+group2_mean = round(group2.mean(), decimal_places)
+⋮----
+group1_std = round(group1.std(), decimal_places)
+group2_std = round(group2.std(), decimal_places)
+⋮----
+# Aggregate: Median and Interquartile Range (IQR)
+group1_median = group1.median()
+group2_median = group2.median()
+group1_iqr = [group1.quantile(0.25), group1.quantile(0.75)]
+group2_iqr = [group2.quantile(0.25), group2.quantile(0.75)]
+⋮----
+# Function to create Word table from var_config
+def create_word_table(df,var_config, subheadings)
+⋮----
+# Create a new Word Document
+doc = Document()
+⋮----
+# Create the table with columns for Variable, Group 1, Group 2, P-Value
+table = doc.add_table(rows=1, cols=4)
+⋮----
+hdr_cells = table.rows[0].cells
+⋮----
+row.paragraphs[0].runs[0].font.bold = True  # Bold formatting for the subheading row
+⋮----
+group1_size = len(df[df[grouping_var] == df[grouping_var].unique()[0]])
+group2_size = len(df[df[grouping_var] == df[grouping_var].unique()[1]])
+grp_cells = table.add_row().cells
+⋮----
+# Loop through subheadings
+⋮----
+# Add a row for the subheading (this is the row header)
+row_cells = table.add_row().cells
+row_cells[0].text = f"{subheading_name}"  # Subheading name in the first column
+row_cells[1].text = ''  # Leave empty for Group 1
+row_cells[2].text = ''  # Leave empty for Group 2
+row_cells[3].text = ''  # Leave empty for P-Value
+⋮----
+row_cells[0].paragraphs[0].runs[0].font.bold = True  # Bold formatting for the subheading row
+⋮----
+# Get and sort all variables for the current subheading
+subheading_vars = [col for col, config in var_config.items() if config['subheading'] == subheading_name]
+sorted_subheading_vars = sorted(subheading_vars, key=lambda x: var_config[x]["position"])
+⋮----
+# Add a row for each variable under the current subheading
+⋮----
+var_type = var_config[var]["type"]
+var_name = var_config[var]["rename"]
+⋮----
+var_options = df[var].unique()
+⋮----
+# Apply formatting to the variable name cell (indentation and smaller font)
+# para = row_cells[0].paragraphs[0]
+# run = para.add_run(row_cells[0].text)
+# run.font.size = Pt(8)  # Smaller font size
+# para.paragraph_format.left_indent = Pt(12)  # Indentation for the variable name
+⋮----
+# Save the document to a file
+doc_filename = "statistical_analysis_results.docx"
+⋮----
+# remove grouping_var from columns
+⋮----
+# Perform statistical analysis using the grouping variable
+⋮----
+var_type = var_config[col]["type"]
+⋮----
+p_value = run_statistical_test(df, grouping_var, var_type, col, decimal_places)
+⋮----
+aggregate_result = perform_aggregate_analysis(df, grouping_var
+⋮----
+# print(var_config[col]["p_value"], default_tests[var_type])
+⋮----
+doc_filename = create_word_table(df, var_config, subheadings)
+</file>
+
+<file path="requirements.txt">
+faicons
+shiny
+shinywidgets
+plotly
+pandas
+ridgeplot
+scipy
+python-docx
+docx
+</file>
+
+</files>

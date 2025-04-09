@@ -1,0 +1,32 @@
+The error trace indicates that there is a problem with the SSL handshake during the connection attempt to the MongoDB cluster. Specifically, the error `SSL: TLSV1_ALERT_INTERNAL_ERROR` signals that the MongoDB server is having issues with the SSL/TLS configuration or the configuration on the client-side is not compatible.
+
+To solve this issue, you can try the following:
+
+1. **Update MongoDB Connection String**: Ensure that your MongoDB connection string is fully compatible with the latest MongoDB drivers and server settings. It typically includes specifying a TLS version in the connection URI to force the use of a compatible and secure TLS version.
+
+   Make sure your connection URI in `mongodb_connect.py` is similar to:
+
+   ```python
+   uri = "mongodb+srv://<username>:<password>@cluster.mongodb.net/test?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=false"
+   ```
+
+   Here we add `tls=true` to ensure that the connection uses TLS.
+
+2. **Environment Variables**: Check if `MONGO_DB_PASS` is set in your environment and correctly fetched in the code. Misconfigured passwords could cause authentication errors that might not clearly show up as SSL issues.
+
+3. **Network and Firewall**: Ensure that your client network allows outbound connections over the required ports (27017 for MongoDB) and that the MongoDB server network allows inbound connections from your IP or IP range.
+
+4. **Update pymongo Version**: Ensure that your pymongo package is up-to-date, as there might have been patches or improvements regarding compatibility issues:
+
+   Update `requirements.txt` if needed:
+   ```plaintext
+   pymongo==4.11.3
+   ```
+
+5. **Check Compatibility**: Ensure that all the components of your stack (especially Python version, pymongo client, and MongoDB server) support the same set of TLS/SSL protocols. Sometimes, newer or older versions could have deprecated or changed support which could lead to handshake errors.
+
+6. **SSL Configuration**: If you have access to the MongoDB server configuration, validate the SSL/TLS settings to ensure they are set correctly to accept client connections over TLS. If configuring the MongoDB Atlas, you might need to check the specific cluster settings in the Atlas dashboard.
+
+7. **Python TLS Support**: Verify that your Python installation has support for the required TLS/SSL version using the OpenSSL module. This may involve compiling Python against a suitable OpenSSL version.
+
+If the problem persists after trying these solutions, enabling debug logging for more insights could be useful, and contacting your MongoDB service provider for further assistance might be necessary.

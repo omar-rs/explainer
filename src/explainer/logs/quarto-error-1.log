@@ -1,0 +1,411 @@
+2025-04-08T20:58:10-04:00 Your publish request with ID 5d56d40a-800c-4052-a6d1-275c4e27fe2f is now being processed.
+2025-04-08T20:58:10-04:00 Quarto version was not provided. Using 1.6.42
+2025-04-08T20:58:10-04:00 Loading your source code...
+2025-04-08T20:58:10-04:00 Initialized empty Git repository in /cloud/project/.git/
+2025-04-08T20:58:12-04:00 From https://github.com/jimrothstein/docs
+2025-04-08T20:58:12-04:00  * branch            0538a1c30defdd7fbd39683ca269c15cb6ecfa69 -> FETCH_HEAD
+2025-04-08T20:58:12-04:00 HEAD is now at 0538a1c add manifest.json
+2025-04-08T20:58:12-04:00 Installing your code's dependencies into the rendering environment.
+2025-04-08T20:58:12-04:00 Quarto version was not provided. Using 1.6.42
+2025-04-08T20:58:12-04:00 Collecting your code's R dependencies...
+2025-04-08T20:58:13-04:00 55 new R package(s) to install.
+2025-04-08T20:58:13-04:00 Connect Cloud is providing the following 54 R packages:
+2025-04-08T20:58:13-04:00 askpass@1.2.1, backports@1.5.0, base64enc@0.1-3, bslib@0.9.0, cachem@1.1.0
+2025-04-08T20:58:13-04:00 checkmate@2.3.2, cli@3.6.3, cpp11@0.5.1, crayon@1.5.3, curl@6.2.0
+2025-04-08T20:58:13-04:00 digest@0.6.37, dplyr@1.1.4, evaluate@1.0.3, fansi@1.0.6, fastmap@1.2.0
+2025-04-08T20:58:13-04:00 fontawesome@0.5.3, fs@1.6.5, generics@0.1.3, glue@1.8.0, highr@0.11
+2025-04-08T20:58:13-04:00 htmltools@0.5.8.1, jquerylib@0.1.4, jsonlite@1.8.9, knitr@1.49, lifecycle@1.0.4
+2025-04-08T20:58:13-04:00 lobstr@1.1.2, lubridate@1.9.4, magrittr@2.0.3, memoise@2.0.1, mime@0.12
+2025-04-08T20:58:13-04:00 openssl@2.3.2, packrat@0.9.2, pillar@1.10.1, pkgconfig@2.0.3, PKI@0.1-14
+2025-04-08T20:58:13-04:00 prettyunits@1.2.0, R6@2.5.1, rappdirs@0.3.3, renv@1.1.1, rlang@1.1.5
+2025-04-08T20:58:13-04:00 rmarkdown@2.29, rsconnect@1.3.4, rstudioapi@0.17.1, sass@0.4.9, sys@3.4.3
+2025-04-08T20:58:13-04:00 tibble@3.2.1, tidyselect@1.2.1, timechange@0.3.0, tinytex@0.54, utf8@1.2.4
+2025-04-08T20:58:13-04:00 vctrs@0.6.5, withr@3.0.2, xfun@0.50, yaml@2.3.10
+2025-04-08T20:58:13-04:00 1 additional package will be installed from the Internet.
+2025-04-08T20:58:13-04:00 Initialized empty Git repository in /tmp/download/github-insightsengineering-teal.code/.git/
+2025-04-08T20:58:13-04:00 From https://github.com/insightsengineering/teal.code
+2025-04-08T20:58:13-04:00  * branch            b336941dcc830a9b01fc8e206831cc4367599161 -> FETCH_HEAD
+2025-04-08T20:58:13-04:00 HEAD is now at b336941 [skip actions] Bump version to 0.6.0.9002
+2025-04-08T20:58:13-04:00 Downloaded github distribution teal.code=0.6.0.9002
+2025-04-08T20:58:13-04:00 * installing to library ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.4’
+2025-04-08T20:58:13-04:00 * installing *source* package ‘teal.code’ ...
+2025-04-08T20:58:13-04:00 ** using staged installation
+2025-04-08T20:58:13-04:00 ** R
+2025-04-08T20:58:13-04:00 ** inst
+2025-04-08T20:58:13-04:00 ** byte-compile and prepare package for lazy loading
+2025-04-08T20:58:14-04:00 ** help
+2025-04-08T20:58:14-04:00 *** installing help indices
+2025-04-08T20:58:14-04:00 *** copying figures
+2025-04-08T20:58:14-04:00 ** building package indices
+2025-04-08T20:58:14-04:00 ** installing vignettes
+2025-04-08T20:58:14-04:00 ** testing if installed package can be loaded from temporary location
+2025-04-08T20:58:15-04:00 ** testing if installed package can be loaded from final location
+2025-04-08T20:58:15-04:00 ** testing if installed package keeps a record of temporary installation path
+2025-04-08T20:58:15-04:00 * DONE (teal.code)
+2025-04-08T20:58:15-04:00 Installed teal.code
+2025-04-08T20:58:16-04:00 Rendering with Quarto...
+2025-04-08T20:58:16-04:00 Using R version: 4.4.2
+2025-04-08T20:58:16-04:00 Quarto version was not provided. Using 1.6.42
+2025-04-08T20:58:16-04:00 Using Quarto version: 1.6.42
+2025-04-08T20:58:16-04:00
+[ 1/19] 001_grep_regex_P_examples.qmd
+2025-04-08T20:58:16-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:18-04:00
+[ 2/19] 001_tech_reading.qmd
+2025-04-08T20:58:19-04:00
+2025-04-08T20:58:19-04:00
+2025-04-08T20:58:19-04:00 processing file: 001_tech_reading.qmd
+2025-04-08T20:58:19-04:00 1/5
+2025-04-08T20:58:19-04:00 2/5 [unnamed-chunk-1]
+2025-04-08T20:58:19-04:00 3/5
+2025-04-08T20:58:19-04:00 4/5 [unnamed-chunk-2]
+2025-04-08T20:58:19-04:00 5/5
+2025-04-08T20:58:19-04:00 output file: 001_tech_reading.knit.md
+2025-04-08T20:58:19-04:00
+2025-04-08T20:58:19-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:20-04:00 Warning message:
+2025-04-08T20:58:20-04:00 The downlit and xml2 packages are required for code linking
+2025-04-08T20:58:21-04:00
+[ 3/19] 002_grep_examples.qmd
+2025-04-08T20:58:21-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:21-04:00
+[ 4/19] 202_ZSH_ZZAPPERS_CHEAT.qmd
+2025-04-08T20:58:21-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:22-04:00 [33mWARNING (/opt/quarto/1.6.42/share/filters/main.lua:9581)
+2025-04-08T20:58:22-04:00 The following string was found in the document: :completion:expand-args-of::::
+2025-04-08T20:58:22-04:00 This string was found in a block element with the following content:
+2025-04-08T20:58:22-04:00
+2025-04-08T20:58:22-04:00 zstyle ‘:completion:expand-args-of::::’ completer expand-args-of bindkey ‘xa’ expand-args-of
+2025-04-08T20:58:22-04:00
+2025-04-08T20:58:22-04:00 This usually indicates a problem with a fenced div in the document. Please check the document for errors.
+2025-04-08T20:58:23-04:00 [39m
+[ 5/19] 250_quarto_knitr_SCSS_NOTES.qmd
+2025-04-08T20:58:24-04:00
+2025-04-08T20:58:24-04:00
+2025-04-08T20:58:24-04:00 processing file: 250_quarto_knitr_SCSS_NOTES.qmd
+2025-04-08T20:58:24-04:00 1/29
+2025-04-08T20:58:24-04:00 2/29 [setup]
+2025-04-08T20:58:24-04:00 3/29
+2025-04-08T20:58:24-04:00 4/29 [unnamed-chunk-1]
+2025-04-08T20:58:24-04:00 5/29
+2025-04-08T20:58:24-04:00 6/29 [unnamed-chunk-2]
+2025-04-08T20:58:24-04:00 7/29
+2025-04-08T20:58:24-04:00 8/29 [unnamed-chunk-3]
+2025-04-08T20:58:24-04:00 9/29
+2025-04-08T20:58:24-04:00 10/29 [.custombox_yellow]
+2025-04-08T20:58:24-04:00 11/29
+2025-04-08T20:58:24-04:00 12/29 [unnamed-chunk-4]
+2025-04-08T20:58:24-04:00 13/29
+2025-04-08T20:58:24-04:00 14/29 [example]
+2025-04-08T20:58:24-04:00 15/29
+2025-04-08T20:58:24-04:00 16/29 [unnamed-chunk-6]
+2025-04-08T20:58:24-04:00 17/29
+2025-04-08T20:58:24-04:00 18/29 [df-drop-ok]
+2025-04-08T20:58:24-04:00 19/29
+2025-04-08T20:58:24-04:00 20/29 [unnamed-chunk-7]
+2025-04-08T20:58:24-04:00 21/29
+2025-04-08T20:58:24-04:00 22/29 [unnamed-chunk-8]
+2025-04-08T20:58:24-04:00 23/29
+2025-04-08T20:58:24-04:00 24/29 [unnamed-chunk-9]
+2025-04-08T20:58:24-04:00 25/29
+2025-04-08T20:58:24-04:00 26/29 [unnamed-chunk-10]
+2025-04-08T20:58:24-04:00 27/29
+2025-04-08T20:58:24-04:00 28/29 [mtcars]
+2025-04-08T20:58:24-04:00 29/29
+2025-04-08T20:58:24-04:00 output file: 250_quarto_knitr_SCSS_NOTES.knit.md
+2025-04-08T20:58:24-04:00
+2025-04-08T20:58:24-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:25-04:00 Warning message:
+2025-04-08T20:58:25-04:00 The downlit and xml2 packages are required for code linking
+2025-04-08T20:58:26-04:00
+[ 6/19] 260_typst_cheat.qmd
+2025-04-08T20:58:26-04:00
+2025-04-08T20:58:26-04:00
+2025-04-08T20:58:26-04:00 processing file: 260_typst_cheat.qmd
+2025-04-08T20:58:26-04:00 1/29
+2025-04-08T20:58:26-04:00 2/29 [setup]
+2025-04-08T20:58:26-04:00 3/29
+2025-04-08T20:58:26-04:00 4/29 [unnamed-chunk-1]
+2025-04-08T20:58:26-04:00 5/29
+2025-04-08T20:58:26-04:00 6/29 [unnamed-chunk-2]
+2025-04-08T20:58:26-04:00 7/29
+2025-04-08T20:58:26-04:00 8/29 [unnamed-chunk-3]
+2025-04-08T20:58:26-04:00 9/29
+2025-04-08T20:58:26-04:00 10/29 [.custombox_yellow]
+2025-04-08T20:58:26-04:00 11/29
+2025-04-08T20:58:26-04:00 12/29 [unnamed-chunk-4]
+2025-04-08T20:58:26-04:00 13/29
+2025-04-08T20:58:26-04:00 14/29 [example]
+2025-04-08T20:58:26-04:00 15/29
+2025-04-08T20:58:26-04:00 16/29 [unnamed-chunk-6]
+2025-04-08T20:58:26-04:00 17/29
+2025-04-08T20:58:26-04:00 18/29 [df-drop-ok]
+2025-04-08T20:58:26-04:00 19/29
+2025-04-08T20:58:26-04:00 20/29 [unnamed-chunk-7]
+2025-04-08T20:58:26-04:00 21/29
+2025-04-08T20:58:26-04:00 22/29 [unnamed-chunk-8]
+2025-04-08T20:58:26-04:00 23/29
+2025-04-08T20:58:26-04:00 24/29 [unnamed-chunk-9]
+2025-04-08T20:58:26-04:00 25/29
+2025-04-08T20:58:26-04:00 26/29 [unnamed-chunk-10]
+2025-04-08T20:58:26-04:00 27/29
+2025-04-08T20:58:26-04:00 28/29 [mtcars]
+2025-04-08T20:58:27-04:00 29/29
+2025-04-08T20:58:27-04:00 output file: 260_typst_cheat.knit.md
+2025-04-08T20:58:27-04:00
+2025-04-08T20:58:27-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:28-04:00 Warning message:
+2025-04-08T20:58:28-04:00 The downlit and xml2 packages are required for code linking
+2025-04-08T20:58:28-04:00
+[ 7/19] 280_emacs_notes.qmd
+2025-04-08T20:58:29-04:00
+2025-04-08T20:58:29-04:00
+2025-04-08T20:58:29-04:00 processing file: 280_emacs_notes.qmd
+2025-04-08T20:58:29-04:00 1/3
+2025-04-08T20:58:29-04:00 2/3 [unnamed-chunk-1]
+2025-04-08T20:58:29-04:00 3/3
+2025-04-08T20:58:29-04:00 output file: 280_emacs_notes.knit.md
+2025-04-08T20:58:29-04:00
+2025-04-08T20:58:29-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:30-04:00 Warning message:
+2025-04-08T20:58:30-04:00 The downlit and xml2 packages are required for code linking
+2025-04-08T20:58:30-04:00
+[ 8/19] 300_tech_notes.qmd
+2025-04-08T20:58:30-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:31-04:00
+[ 9/19] 310_R_notes.qmd
+2025-04-08T20:58:32-04:00
+2025-04-08T20:58:32-04:00
+2025-04-08T20:58:32-04:00 processing file: 310_R_notes.qmd
+2025-04-08T20:58:32-04:00 1/57
+2025-04-08T20:58:32-04:00 2/57 [setup]
+2025-04-08T20:58:32-04:00 3/57
+2025-04-08T20:58:32-04:00 4/57 [unnamed-chunk-1]
+2025-04-08T20:58:32-04:00 5/57
+2025-04-08T20:58:32-04:00 6/57 [why]
+2025-04-08T20:58:32-04:00 7/57
+2025-04-08T20:58:32-04:00 8/57 [intro_call]
+2025-04-08T20:58:32-04:00 9/57
+2025-04-08T20:58:32-04:00 10/57 [calling]
+2025-04-08T20:58:32-04:00 11/57
+2025-04-08T20:58:32-04:00 12/57 [eval]
+2025-04-08T20:58:32-04:00 13/57
+2025-04-08T20:58:32-04:00 14/57 [unnamed-chunk-2]
+2025-04-08T20:58:32-04:00 15/57
+2025-04-08T20:58:32-04:00 16/57 [unnamed-chunk-3]
+2025-04-08T20:58:32-04:00 17/57
+2025-04-08T20:58:32-04:00 18/57 [unnamed-chunk-4]
+2025-04-08T20:58:32-04:00 19/57
+2025-04-08T20:58:32-04:00 20/57 [unnamed-chunk-5]
+2025-04-08T20:58:32-04:00 21/57
+2025-04-08T20:58:32-04:00 22/57 [unnamed-chunk-6]
+2025-04-08T20:58:32-04:00 23/57
+2025-04-08T20:58:32-04:00 24/57 [local]
+2025-04-08T20:58:32-04:00 25/57
+2025-04-08T20:58:32-04:00 26/57 [unnamed-chunk-7]
+2025-04-08T20:58:32-04:00 27/57
+2025-04-08T20:58:32-04:00 28/57 [primitive]
+2025-04-08T20:58:32-04:00 29/57
+2025-04-08T20:58:32-04:00 30/57 [unnamed-chunk-9]
+2025-04-08T20:58:32-04:00 31/57
+2025-04-08T20:58:32-04:00 32/57 [unnamed-chunk-10]
+2025-04-08T20:58:32-04:00 33/57
+2025-04-08T20:58:32-04:00 34/57 [unnamed-chunk-11]
+2025-04-08T20:58:32-04:00 35/57
+2025-04-08T20:58:32-04:00 36/57 [unnamed-chunk-12]
+2025-04-08T20:58:32-04:00 37/57
+2025-04-08T20:58:32-04:00 38/57 [unnamed-chunk-13]
+2025-04-08T20:58:32-04:00 39/57
+2025-04-08T20:58:32-04:00 40/57 [unnamed-chunk-14]
+2025-04-08T20:58:32-04:00 41/57
+2025-04-08T20:58:32-04:00 42/57 [unnamed-chunk-15]
+2025-04-08T20:58:32-04:00 43/57
+2025-04-08T20:58:32-04:00 44/57 [unnamed-chunk-16]
+2025-04-08T20:58:32-04:00 45/57
+2025-04-08T20:58:32-04:00 46/57 [unnamed-chunk-17]
+2025-04-08T20:58:32-04:00 47/57
+2025-04-08T20:58:32-04:00 48/57 [function]
+2025-04-08T20:58:32-04:00 49/57
+2025-04-08T20:58:32-04:00 50/57 [parse]
+2025-04-08T20:58:32-04:00 51/57
+2025-04-08T20:58:32-04:00 52/57 [call]
+2025-04-08T20:58:32-04:00 53/57
+2025-04-08T20:58:32-04:00 54/57 [sub]
+2025-04-08T20:58:32-04:00 55/57
+2025-04-08T20:58:32-04:00 56/57 [unnamed-chunk-18]
+2025-04-08T20:58:32-04:00 57/57
+2025-04-08T20:58:32-04:00 output file: 310_R_notes.knit.md
+2025-04-08T20:58:32-04:00
+2025-04-08T20:58:32-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:33-04:00 Warning message:
+2025-04-08T20:58:33-04:00 The downlit and xml2 packages are required for code linking
+2025-04-08T20:58:34-04:00
+[10/19] 400_MATH_notes.qmd
+2025-04-08T20:58:34-04:00
+2025-04-08T20:58:34-04:00
+2025-04-08T20:58:34-04:00 processing file: 400_MATH_notes.qmd
+2025-04-08T20:58:34-04:00 1/11
+2025-04-08T20:58:35-04:00 2/11 [setup]
+2025-04-08T20:58:35-04:00 3/11
+2025-04-08T20:58:35-04:00 4/11 [library]
+2025-04-08T20:58:35-04:00 5/11
+2025-04-08T20:58:35-04:00 6/11 [plot_density]
+2025-04-08T20:58:35-04:00 7/11
+2025-04-08T20:58:35-04:00 8/11 [plot_png_example]
+2025-04-08T20:58:35-04:00 9/11
+2025-04-08T20:58:35-04:00 10/11 [knit_exit()]
+2025-04-08T20:58:35-04:00 11/11
+2025-04-08T20:58:35-04:00 output file: 400_MATH_notes.knit.md
+2025-04-08T20:58:35-04:00
+2025-04-08T20:58:35-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:36-04:00 Warning message:
+2025-04-08T20:58:36-04:00 The downlit and xml2 packages are required for code linking
+2025-04-08T20:58:36-04:00
+[11/19] 410_typst_MATH_notes.qmd
+2025-04-08T20:58:36-04:00 [WARNING] Could not convert TeX math #sym.arrow.r, rendering as TeX:
+2025-04-08T20:58:36-04:00   #sym.arrow.r
+2025-04-08T20:58:36-04:00   ^
+2025-04-08T20:58:36-04:00   unexpected '#'
+2025-04-08T20:58:36-04:00   expecting "%", "\\label", "\\tag", "\\nonumber", whitespace, "\\allowbreak", "\\bangle", "\\brace", "\\brack", "\\choose", "\\displaystyle", "\\textstyle", "\\scriptstyle", "\\scriptscriptstyle", "{", "\\operatorname", letter, digit, ".", "!", "'", "''", "'''", "''''", "*", "+", ",", "-", ".", "/", ":", ":=", ";", "<", "=", ">", "?", "@", "~", "_", "^", "\\left", "(", "[", "|", "\\lVert", "\\", "\\hyperref" or end of input
+2025-04-08T20:58:36-04:00 [WARNING] Could not convert TeX math \u{2192}, rendering as TeX:
+2025-04-08T20:58:36-04:00   \u{2192}
+2025-04-08T20:58:36-04:00     ^
+2025-04-08T20:58:36-04:00   unexpected control sequence \u
+2025-04-08T20:58:36-04:00   expecting "%", "\\label", "\\tag", "\\nonumber", whitespace or "\\allowbreak"
+2025-04-08T20:58:36-04:00 [WARNING] Could not convert TeX math "area" = pi dot "radius"^2, rendering as TeX:
+2025-04-08T20:58:36-04:00   "area" = pi dot "radius"^2
+2025-04-08T20:58:36-04:00   ^
+2025-04-08T20:58:36-04:00   unexpected '"'
+2025-04-08T20:58:36-04:00   expecting "%", "\\label", "\\tag", "\\nonumber", whitespace, "\\allowbreak", "\\bangle", "\\brace", "\\brack", "\\choose", "\\displaystyle", "\\textstyle", "\\scriptstyle", "\\scriptscriptstyle", "{", "\\operatorname", letter, digit, ".", "!", "'", "''", "'''", "''''", "*", "+", ",", "-", ".", "/", ":", ":=", ";", "<", "=", ">", "?", "@", "~", "_", "^", "\\left", "(", "[", "|", "\\lVert", "\\", "\\hyperref" or end of input
+2025-04-08T20:58:36-04:00 [WARNING] Could not convert TeX math cal(A) :=
+2025-04-08T20:58:36-04:00       { x in RR | x "is natural" }, rendering as TeX:
+2025-04-08T20:58:36-04:00       { x in RR | x "is natural" }
+2025-04-08T20:58:36-04:00                     ^
+2025-04-08T20:58:36-04:00   unexpected "\""
+2025-04-08T20:58:36-04:00   expecting "\\bangle", "\\brace", "\\brack", "\\choose", "\\displaystyle", "\\textstyle", "\\scriptstyle", "\\scriptscriptstyle", "{", "\\operatorname", letter, digit, ".", "!", "'", "''", "'''", "''''", "*", "+", ",", "-", ".", "/", ":", ":=", ";", "<", "=", ">", "?", "@", "~", "_", "^", "\\left", "(", "[", "|", "\\lVert", "\\", "\\hyperref", white space or "}"
+2025-04-08T20:58:36-04:00 [WARNING] Could not convert TeX math #x < 17, rendering as TeX:
+2025-04-08T20:58:36-04:00   #x < 17
+2025-04-08T20:58:36-04:00   ^
+2025-04-08T20:58:36-04:00   unexpected '#'
+2025-04-08T20:58:36-04:00   expecting "%", "\\label", "\\tag", "\\nonumber", whitespace, "\\allowbreak", "\\bangle", "\\brace", "\\brack", "\\choose", "\\displaystyle", "\\textstyle", "\\scriptstyle", "\\scriptscriptstyle", "{", "\\operatorname", letter, digit, ".", "!", "'", "''", "'''", "''''", "*", "+", ",", "-", ".", "/", ":", ":=", ";", "<", "=", ">", "?", "@", "~", "_", "^", "\\left", "(", "[", "|", "\\lVert", "\\", "\\hyperref" or end of input
+2025-04-08T20:58:36-04:00 [WARNING] Could not convert TeX math sum_(k=0)^n k
+2025-04-08T20:58:36-04:00       &= 1 + ... + n \
+2025-04-08T20:58:36-04:00       &= (n(n+1)) / 2, rendering as TeX:
+2025-04-08T20:58:36-04:00       &= 1 + ... + n \
+2025-04-08T20:58:36-04:00       ^
+2025-04-08T20:58:36-04:00   unexpected '&'
+2025-04-08T20:58:36-04:00   expecting "\\bangle", "\\brace", "\\brack", "\\choose", "\\displaystyle", "\\textstyle", "\\scriptstyle", "\\scriptscriptstyle", "{", "\\operatorname", letter, digit, ".", "!", "'", "''", "'''", "''''", "*", "+", ",", "-", ".", "/", ":", ":=", ";", "<", "=", ">", "?", "@", "~", "_", "^", "\\left", "(", "[", "|", "\\lVert", "\\", "\\hyperref" or end of input
+2025-04-08T20:58:36-04:00 [WARNING] Could not convert TeX math vec(1, 2, delim: "["), rendering as TeX:
+2025-04-08T20:58:36-04:00   vec(1, 2, delim: "[")
+2025-04-08T20:58:36-04:00                    ^
+2025-04-08T20:58:36-04:00   unexpected '"'
+2025-04-08T20:58:36-04:00   expecting "\\bangle", "\\brace", "\\brack", "\\choose", "\\displaystyle", "\\textstyle", "\\scriptstyle", "\\scriptscriptstyle", "{", "\\operatorname", letter, digit, ".", "!", "'", "''", "'''", "''''", "*", "+", ",", "-", ".", "/", ":", ":=", ";", "<", "=", ">", "?", "@", "~", "_", "^", "\\left", "(", "[", "|", "\\lVert", "\\", "\\hyperref" or end of input
+2025-04-08T20:58:36-04:00 [WARNING] Could not convert TeX math lim_x = op("lim", limits: #true)x, rendering as TeX:
+2025-04-08T20:58:36-04:00   lim_x = op("lim", limits: #true)x
+2025-04-08T20:58:36-04:00              ^
+2025-04-08T20:58:36-04:00   unexpected '"'
+2025-04-08T20:58:36-04:00   expecting "\\bangle", "\\brace", "\\brack", "\\choose", "\\displaystyle", "\\textstyle", "\\scriptstyle", "\\scriptscriptstyle", "{", "\\operatorname", letter, digit, ".", "!", "'", "''", "'''", "''''", "*", "+", ",", "-", ".", "/", ":", ":=", ";", "<", "=", ">", "?", "@", "~", "_", "^", "\\left", "(", "[", "|", "\\lVert", "\\", "\\hyperref" or end of input
+2025-04-08T20:58:37-04:00 [typst]: Compiling 410_typst_MATH_notes.typ to 410_typst_MATH_notes.pdf...DONE
+2025-04-08T20:58:37-04:00
+2025-04-08T20:58:37-04:00
+[12/19] 810_pharmaverse_NOTES.qmd
+2025-04-08T20:58:37-04:00
+2025-04-08T20:58:37-04:00
+2025-04-08T20:58:37-04:00 processing file: 810_pharmaverse_NOTES.qmd
+2025-04-08T20:58:37-04:00 1/5
+2025-04-08T20:58:37-04:00 2/5 [unnamed-chunk-1]
+2025-04-08T20:58:37-04:00 3/5
+2025-04-08T20:58:37-04:00 4/5 [manifest]
+2025-04-08T20:58:37-04:00 5/5
+2025-04-08T20:58:37-04:00 output file: 810_pharmaverse_NOTES.knit.md
+2025-04-08T20:58:37-04:00
+2025-04-08T20:58:37-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:37-04:00 [WARNING] Note with key 'CDISC_schema' defined at line 830 column 1 but not used.
+2025-04-08T20:58:37-04:00 [WARNING] Note with key 'lintr' defined at line 822 column 1 but not used.
+2025-04-08T20:58:37-04:00 [WARNING] Note with key 'swhume' defined at line 827 column 1 but not used.
+2025-04-08T20:58:38-04:00 Warning message:
+2025-04-08T20:58:38-04:00 The downlit and xml2 packages are required for code linking
+2025-04-08T20:58:39-04:00
+[13/19] 900_data_pronoun.qmd
+2025-04-08T20:58:39-04:00
+2025-04-08T20:58:39-04:00
+2025-04-08T20:58:39-04:00 processing file: 900_data_pronoun.qmd
+2025-04-08T20:58:39-04:00 1/5
+2025-04-08T20:58:39-04:00 2/5 [unnamed-chunk-1]
+2025-04-08T20:58:39-04:00 3/5
+2025-04-08T20:58:39-04:00 4/5 [unnamed-chunk-2]
+2025-04-08T20:58:39-04:00 5/5
+2025-04-08T20:58:39-04:00 output file: 900_data_pronoun.knit.md
+2025-04-08T20:58:39-04:00
+2025-04-08T20:58:39-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:40-04:00 Warning message:
+2025-04-08T20:58:40-04:00 The downlit and xml2 packages are required for code linking
+2025-04-08T20:58:41-04:00
+[14/19] 910_basic_conditions_NOTES.qmd
+2025-04-08T20:58:41-04:00
+2025-04-08T20:58:41-04:00
+2025-04-08T20:58:41-04:00 processing file: 910_basic_conditions_NOTES.qmd
+2025-04-08T20:58:41-04:00 1/11
+2025-04-08T20:58:41-04:00 2/11 [setup]
+2025-04-08T20:58:41-04:00 3/11
+2025-04-08T20:58:41-04:00 4/11 [basic]
+2025-04-08T20:58:41-04:00 5/11
+2025-04-08T20:58:41-04:00 6/11 [simpleCondition]
+2025-04-08T20:58:41-04:00 7/11
+2025-04-08T20:58:41-04:00 8/11 [handlers]
+2025-04-08T20:58:41-04:00 9/11
+2025-04-08T20:58:41-04:00 10/11 [knit_exit()]
+2025-04-08T20:58:41-04:00 11/11
+2025-04-08T20:58:41-04:00 output file: 910_basic_conditions_NOTES.knit.md
+2025-04-08T20:58:41-04:00
+2025-04-08T20:58:41-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:44-04:00 Warning message:
+2025-04-08T20:58:44-04:00 The downlit and xml2 packages are required for code linking
+2025-04-08T20:58:44-04:00
+[15/19] README_test.md
+2025-04-08T20:58:44-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:45-04:00 [WARNING] Could not fetch resource man/figures/logo.png
+2025-04-08T20:58:45-04:00 [WARNING] Could not fetch resource man/figures/logo.png
+2025-04-08T20:58:52-04:00
+[16/19] README_test.qmd
+2025-04-08T20:58:52-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:58:53-04:00 [WARNING] Could not fetch resource man/figures/logo.png
+2025-04-08T20:58:53-04:00 [WARNING] Could not fetch resource man/figures/logo.png
+2025-04-08T20:58:57-04:00
+[17/19] docs/MATH_notes.md
+2025-04-08T20:58:57-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/docs/custom.scss
+2025-04-08T20:58:58-04:00
+[18/19] docs/reading.md
+2025-04-08T20:58:58-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/docs/custom.scss
+2025-04-08T20:58:59-04:00
+[19/19] play.qmd
+2025-04-08T20:58:59-04:00
+2025-04-08T20:58:59-04:00
+2025-04-08T20:58:59-04:00 processing file: play.qmd
+2025-04-08T20:58:59-04:00 1/3
+2025-04-08T20:58:59-04:00 2/3 [setup]
+2025-04-08T20:58:59-04:00 3/3
+2025-04-08T20:58:59-04:00 output file: play.knit.md
+2025-04-08T20:58:59-04:00
+2025-04-08T20:58:59-04:00 WARN: Theme file not found: /tmp/vivid-blender/rendered-output-1/custom.scss
+2025-04-08T20:59:00-04:00 Warning message:
+2025-04-08T20:59:00-04:00 The downlit and xml2 packages are required for code linking
+2025-04-08T20:59:00-04:00
+2025-04-08T20:59:00-04:00 ERROR: NotFound: No such file or directory (os error 2): rename '/tmp/vivid-blender/rendered-output-1/README_test.html' -> '/tmp/vivid-blender/rendered-output-1/cf9c3e6b-0039-4cc9-99b2-d31d16cbf72e/README_test.html'
+2025-04-08T20:59:00-04:00
+2025-04-08T20:59:00-04:00 Stack trace:
+2025-04-08T20:59:00-04:00     at Object.renameSync (ext:deno_fs/30_fs.js:267:3)
+2025-04-08T20:59:00-04:00     at safeMoveSync (file:///opt/quarto/1.6.42/bin/quarto.js:2288:14)
+2025-04-08T20:59:00-04:00     at renderProject (file:///opt/quarto/1.6.42/bin/quarto.js:86064:17)
+2025-04-08T20:59:00-04:00     at eventLoopTick (ext:core/01_core.js:175:7)
+2025-04-08T20:59:00-04:00     at async Command.actionHandler (file:///opt/quarto/1.6.42/bin/quarto.js:90654:32)
+2025-04-08T20:59:00-04:00     at async Command.execute (file:///opt/quarto/1.6.42/bin/quarto.js:8111:13)
+2025-04-08T20:59:00-04:00     at async Command.parseCommand (file:///opt/quarto/1.6.42/bin/quarto.js:8001:20)
+2025-04-08T20:59:00-04:00     at async quarto (file:///opt/quarto/1.6.42/bin/quarto.js:126627:9)
+2025-04-08T20:59:00-04:00     at async file:///opt/quarto/1.6.42/bin/quarto.js:126654:9
+2025-04-08T20:59:00-04:00     at async mainRunner (file:///opt/quarto/1.6.42/bin/quarto.js:126519:9)
+2025-04-08T20:59:00-04:00 Hint: It looks like you may have referenced a file or network location that's accessible
+2025-04-08T20:59:00-04:00 from your computer, but not from the Cloud where your document was rendered.
+2025-04-08T20:59:00-04:00 Consider rendering the document on your computer and publishing the finished document only.
+2025-04-08T20:59:00-04:00 Failed to render Quarto content.
+2025-04-08T20:59:00-04:00 Failed to publish content: Failed during render. Quarto render failed: command exited with status 1 error_id=0688d627-d35f-4a15-a802-93055a11242c

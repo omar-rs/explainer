@@ -1,0 +1,22 @@
+The error message indicates that there is a `TypeError` due to the use of an unexpected keyword argument `disabled` in the `ui.input_text()` function in your Shiny Python application. This means that the `ui.input_text()` function does not support a `disabled` parameter.
+
+To resolve this error, you will need to remove the `disabled=True` argument from the `ui.input_text()` function call in `app.py`, or check the documentation for the specific package you are using to see if there is an alternative way to disable the input field, if that is required for your application's logic.
+
+Here is the snippet from the error and the potential modifications:
+
+Current code causing the error:
+```python
+ui.input_text("subheading_1", "Subheading 1", placeholder="Enter subheading 1 name", disabled=True),
+```
+
+Potential solution:
+1. **Remove the `disabled` argument:**
+
+   ```python
+   ui.input_text("subheading_1", "Subheading 1", placeholder="Enter subheading 1 name"),
+   ```
+
+2. **If you need to keep the text box disabled:**
+   - Refer to the appropriate documentation for alternative methods to disable the input, such as using JavaScript in the UI to set the `disabled` attribute dynamically, if supported by your specific Python Shiny implementation.
+
+After modifying the code, redeploy your application to see if the issue is resolved.
