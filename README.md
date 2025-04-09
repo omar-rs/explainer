@@ -1,6 +1,6 @@
 # explainer
 * Explain errors in failed content publishing to PCC
-* Inspired by the GH Actions ["Explain error" feature](../../Desktop/gh_actions_explain_error.mov)
+* Inspired by the GH Actions ["Explain error" feature](https://github.com/posit-hosted/vivid-api/actions/runs/14268653451/job/39996910370)
 
 
 ### how to ingest repos
@@ -35,6 +35,7 @@
   * generate documentation
   * generate tests
 * how to run the error explainer in prod
+  * repomix supports running as an MCP server
 
 
 ### experiments
