@@ -5,6 +5,17 @@
       "args": [
         "--mcp"
       ]
+    },
+    "logs": {
+      "command": "/opt/homebrew/bin/uv",
+      "args": [
+        "run",
+        "--with",
+        "fastmcp",
+        "fastmcp",
+        "run",
+        "/Users/omar/work/explainer/src/explainer/mcp/logs_server.py"
+      ]
     }
   }
 }

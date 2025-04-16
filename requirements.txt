@@ -8,3 +8,6 @@ openai
 mcp
 anthropic
 python-dotenv
+
+# for mcp server
+fastmcp

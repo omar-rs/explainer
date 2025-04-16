@@ -1,15 +1,20 @@
-### Dev
+### Claude desktop
 * install Claude desktop app (https://claude.ai/download)
-  * to install the `repomix` MCP server in it:
+  * to install MCP servers in it:
     * copy `claude_desktop_config.json` to `~/Library/Application Support/Claude/claude_desktop_config.json`
     * restart Claude app
-    * when it starts, you should see the mcp server running in the Settings > Developer
+    * when it starts, you should see the MCP servers running in the Settings > Developer
     * also, you can see the tools in the prompt (the hammer icon) 
 
-* install the mcp inspector package (https://github.com/modelcontextprotocol/inspector)
+
+### MCP inspector
+* https://github.com/modelcontextprotocol/inspector
+* run the MCP inspector package 
   * `npx @modelcontextprotocol/inspector node build/index.js`
   * access inspector in browser at http://127.0.0.1:6274
 
+
+### repomix MCP server
 * inspect the `repomix` MCP server in the inspector
   * use `STDIO` for transport
   * use `/opt/homebrew/bin/repomix` for command
@@ -25,3 +30,11 @@
 
 * test `repomix` MCP server tool `read_repomix_output`
     * use the value of the `outputId` from the output of the `pack_remote_repository` tool
+
+
+### FastMCP
+* https://github.com/jlowin/fastmcp
+* to test a fastMCP server in the inspector:
+  * `fastmcp dev <path_to_mcp_server_python_entry_point>`
+* to install a fastMCP server in claude app
+  * `fastmcp install <path_to_mcp_server_python_entry_point>`
