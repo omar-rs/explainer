@@ -1,4 +1,10 @@
+# for explainer
 anthropic
 chatlas
 dotenv
 openai
+
+# for mcp client
+mcp
+anthropic
+python-dotenv
