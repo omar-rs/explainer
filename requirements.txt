@@ -1,5 +1,5 @@
 # for explainer
-anthropic
+anthropic[bedrock]
 chatlas
 dotenv
 openai
@@ -11,3 +11,6 @@ python-dotenv
 
 # for mcp server
 fastmcp
+
+# bedrock
+boto3
