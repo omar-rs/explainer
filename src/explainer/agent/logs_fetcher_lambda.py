@@ -1,11 +1,55 @@
-from fastmcp import FastMCP
 
-mcp = FastMCP("Logs Server")
+import logging
+from typing import Dict, Any
+from http import HTTPStatus
 
-def _get_logs(repo: str) -> str:
-    print(f"Fetching logs for repo: {repo}")
-    if repo == "https://github.com/omar-baba/streamlit-error":
-        return """
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
+    """
+    AWS Lambda handler for processing Bedrock agent requests.
+
+    Args:
+        event (Dict[str, Any]): The Lambda event containing action details
+        context (Any): The Lambda context object
+        example:
+            {
+                "actionGroup": "exampleGroup",
+                "function": "exampleFunction",
+                "messageVersion": 1,
+                "parameters": [
+                    {
+                        "name": "log_channel",
+                        "value": "abc"
+                    }
+                ]
+            }
+
+    Returns:
+        Dict[str, Any]: Response containing the action execution results
+
+    Raises:
+        KeyError: If required fields are missing from the event
+    """
+    try:
+        action_group = event['actionGroup']
+        function = event['function']
+        message_version = event.get('messageVersion',1)
+        parameters = event.get('parameters', [])
+
+        logger.info('Received event: %s', event)
+        log_channel = None
+        for param in parameters:
+            if param['name'] == 'log_channel':
+                log_channel = param['value']
+                break
+        if not log_channel:
+            raise KeyError('Missing required field: log_channel')
+
+        body = f"Logs not found for channel {log_channel}"
+        if log_channel == 'abc':
+            body = """
 2025-04-06T21:34:09-04:00 Your publish request with ID da499f79-c89d-4d72-9e53-e710fdc4ee82 is now being processed.
 2025-04-06T21:34:09-04:00 Quarto version was not provided. Using 1.6.42
 2025-04-06T21:34:09-04:00 Loading your source code...
@@ -64,9 +108,39 @@ def _get_logs(repo: str) -> str:
 2025-04-06T21:34:22-04:00     keep = (tmp_a >= first_edge)
 2025-04-06T21:34:22-04:00             ^^^^^^^^^^^^^^^^^^^
 2025-04-06T21:34:22-04:00 TypeError: '>=' not supported between instances of 'DatetimeProperties' and 'int'    
-    """
-    return "Logs not found for this repo"
+            """
 
-@mcp.tool()
-def get_logs_for_repo(repo: str) -> str:
-    return _get_logs(repo)
+        # Execute your business logic here. For more information,
+        # refer to: https://docs.aws.amazon.com/bedrock/latest/userguide/agents-lambda.html
+        response_body = {
+            'TEXT': {
+                'body': body
+            }
+        }
+        action_response = {
+            'actionGroup': action_group,
+            'function': function,
+            'functionResponse': {
+                'responseBody': response_body
+            }
+        }
+        response = {
+            'response': action_response,
+            'messageVersion': message_version
+        }
+
+        logger.info('Response: %s', response)
+        return response
+
+    except KeyError as e:
+        logger.error('Missing required field: %s', str(e))
+        return {
+            'statusCode': HTTPStatus.BAD_REQUEST,
+            'body': f'Error: {str(e)}'
+        }
+    except Exception as e:
+        logger.error('Unexpected error: %s', str(e))
+        return {
+            'statusCode': HTTPStatus.INTERNAL_SERVER_ERROR,
+            'body': 'Internal server error'
+        }
