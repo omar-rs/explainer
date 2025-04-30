@@ -14,3 +14,6 @@ fastmcp
 
 # bedrock
 boto3
+
+# aws inline agents
+inlineagent @ git+https://github.com/awslabs/amazon-bedrock-agent-samples@main#egg=inlineagent&subdirectory=src/InlineAgent
